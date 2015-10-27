@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PgMaster.master.cs" Inherits="Clinica_ASP.PgMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Estilos/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-FEG">
+                    <span class="sr-only"> Desplegar / Ocultar Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Portal Salud Web</a>
+            </div>
+            <!--Inicia Menu-->
+            <div class="collapse navbar-collapse" id="navegacion-FEG">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            Citas 
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Asignacion de Citas</a></li>
+                        </ul>
+                         
+                    </li>
+                    <li ><a href="#">Usuarios</a></li>
+                    <li ><a href="#">Contáctenos</a></li>
+                     <li ><a href="#">Registro</a></li>
+                </ul>
+            </div>
+        </div>    
+    </nav>
+   
+<div class="container">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+
+<footer> 
+ 
+    <div class="row">
+            <div class="col-md-6 hidden-xs hidden-sm">
+                <ul class="list-unstyled list-inline pull-right">
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Contáctenos</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 hidden-xs hidden-sm">
+                <p class="text-muted pull-left">Copyright © 2015 Clinica Web. Todos los Derechos Reservados.</p>
+            </div>
+        </div>
+</footer>
+
+<script src="Scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="Scripts/bootstrap.min.js" type="text/javascript"></script>  
+</body>
+</html>

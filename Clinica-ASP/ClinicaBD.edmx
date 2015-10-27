@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClinicaAspModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ClinicaAspModelStoreContainer">
+    <EntitySet Name="Citas" EntityType="ClinicaAspModel.Store.Citas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormulaMedicas" EntityType="ClinicaAspModel.Store.FormulaMedicas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Medicos" EntityType="ClinicaAspModel.Store.Medicos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pacientes" EntityType="ClinicaAspModel.Store.Pacientes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Cita__CedulaM__0DAF0CB0" Association="ClinicaAspModel.Store.FK__Cita__CedulaM__0DAF0CB0">
+      <End Role="Medico" EntitySet="Medicos" />
+      <End Role="Cita" EntitySet="Citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cita__CedulaPaci__0CBAE877" Association="ClinicaAspModel.Store.FK__Cita__CedulaPaci__0CBAE877">
+      <End Role="Paciente" EntitySet="Pacientes" />
+      <End Role="Cita" EntitySet="Citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FormulaMe__IdCit__1273C1CD" Association="ClinicaAspModel.Store.FK__FormulaMe__IdCit__1273C1CD">
+      <End Role="Cita" EntitySet="Citas" />
+      <End Role="FormulaMedica" EntitySet="FormulaMedicas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Citas">
+    <Key>
+      <PropertyRef Name="IdCita" />
+    </Key>
+    <Property Name="IdCita" Type="int" Nullable="false" />
+    <Property Name="CedulaPaciente" Type="int" Nullable="true" />
+    <Property Name="CedulaM" Type="int" Nullable="true" />
+    <Property Name="fechacita" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="HoraCita" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="FormulaMedicas">
+    <Key>
+      <PropertyRef Name="IdFormulaMedica" />
+    </Key>
+    <Property Name="IdFormulaMedica" Type="int" Nullable="false" />
+    <Property Name="IdCita" Type="int" Nullable="false" />
+    <Property Name="RecetaMedica" Type="varchar" Nullable="false" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Medicos">
+    <Key>
+      <PropertyRef Name="CedulaM" />
+    </Key>
+    <Property Name="CedulaM" Type="int" Nullable="false" />
+    <Property Name="NombreM" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ApellidoM" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailM" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="contrasena" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="anionacimiento" Type="datetime" Nullable="false" />
+    <Property Name="telefono" Type="int" Nullable="true" />
+    <Property Name="Especialidad" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Pacientes">
+    <Key>
+      <PropertyRef Name="CedulaPaciente" />
+    </Key>
+    <Property Name="CedulaPaciente" Type="int" Nullable="false" />
+    <Property Name="NombrePaciente" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ApellidoPaciente" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="contrasena" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="anionacimiento" Type="datetime" Nullable="false" />
+    <Property Name="telefono" Type="int" Nullable="true" />
+  </EntityType>
+  <Association Name="FK__Cita__CedulaM__0DAF0CB0">
+    <End Role="Medico" Type="ClinicaAspModel.Store.Medicos" Multiplicity="0..1" />
+    <End Role="Cita" Type="ClinicaAspModel.Store.Citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medico">
+        <PropertyRef Name="CedulaM" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="CedulaM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cita__CedulaPaci__0CBAE877">
+    <End Role="Paciente" Type="ClinicaAspModel.Store.Pacientes" Multiplicity="0..1" />
+    <End Role="Cita" Type="ClinicaAspModel.Store.Citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="CedulaPaciente" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="CedulaPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FormulaMe__IdCit__1273C1CD">
+    <End Role="Cita" Type="ClinicaAspModel.Store.Citas" Multiplicity="1" />
+    <End Role="FormulaMedica" Type="ClinicaAspModel.Store.FormulaMedicas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cita">
+        <PropertyRef Name="IdCita" />
+      </Principal>
+      <Dependent Role="FormulaMedica">
+        <PropertyRef Name="IdCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClinicaAspModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ClinicaAspEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Citas" EntityType="ClinicaAspModel.Cita" />
+          <EntitySet Name="FormulaMedicas" EntityType="ClinicaAspModel.FormulaMedica" />
+          <EntitySet Name="Medicos" EntityType="ClinicaAspModel.Medico" />
+          <EntitySet Name="Pacientes" EntityType="ClinicaAspModel.Paciente" />
+          <AssociationSet Name="FK__Cita__CedulaM__0DAF0CB0" Association="ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0">
+            <End Role="Medico" EntitySet="Medicos" />
+            <End Role="Cita" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cita__CedulaPaci__0CBAE877" Association="ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877">
+            <End Role="Paciente" EntitySet="Pacientes" />
+            <End Role="Cita" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FormulaMe__IdCit__1273C1CD" Association="ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD">
+            <End Role="Cita" EntitySet="Citas" />
+            <End Role="FormulaMedica" EntitySet="FormulaMedicas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cita">
+          <Key>
+            <PropertyRef Name="IdCita" />
+          </Key>
+          <Property Type="Int32" Name="IdCita" Nullable="false" />
+          <Property Type="Int32" Name="CedulaPaciente" />
+          <Property Type="Int32" Name="CedulaM" />
+          <Property Type="String" Name="fechacita" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HoraCita" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Medico" Relationship="ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0" FromRole="Cita" ToRole="Medico" />
+          <NavigationProperty Name="Paciente" Relationship="ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877" FromRole="Cita" ToRole="Paciente" />
+          <NavigationProperty Name="FormulaMedicas" Relationship="ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD" FromRole="Cita" ToRole="FormulaMedica" />
+        </EntityType>
+        <EntityType Name="FormulaMedica">
+          <Key>
+            <PropertyRef Name="IdFormulaMedica" />
+          </Key>
+          <Property Type="Int32" Name="IdFormulaMedica" Nullable="false" />
+          <Property Type="Int32" Name="IdCita" Nullable="false" />
+          <Property Type="String" Name="RecetaMedica" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cita" Relationship="ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD" FromRole="FormulaMedica" ToRole="Cita" />
+        </EntityType>
+        <EntityType Name="Medico">
+          <Key>
+            <PropertyRef Name="CedulaM" />
+          </Key>
+          <Property Type="Int32" Name="CedulaM" Nullable="false" />
+          <Property Type="String" Name="NombreM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApellidoM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailM" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="contrasena" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="anionacimiento" Nullable="false" />
+          <Property Type="Int32" Name="telefono" />
+          <Property Type="String" Name="Especialidad" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Citas" Relationship="ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0" FromRole="Medico" ToRole="Cita" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="CedulaPaciente" />
+          </Key>
+          <Property Type="Int32" Name="CedulaPaciente" Nullable="false" />
+          <Property Type="String" Name="NombrePaciente" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApellidoPaciente" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="contrasena" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="anionacimiento" Nullable="false" />
+          <Property Type="Int32" Name="telefono" />
+          <NavigationProperty Name="Citas" Relationship="ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877" FromRole="Paciente" ToRole="Cita" />
+        </EntityType>
+        <Association Name="FK__Cita__CedulaM__0DAF0CB0">
+          <End Type="ClinicaAspModel.Medico" Role="Medico" Multiplicity="0..1" />
+          <End Type="ClinicaAspModel.Cita" Role="Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medico">
+              <PropertyRef Name="CedulaM" />
+            </Principal>
+            <Dependent Role="Cita">
+              <PropertyRef Name="CedulaM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cita__CedulaPaci__0CBAE877">
+          <End Type="ClinicaAspModel.Paciente" Role="Paciente" Multiplicity="0..1" />
+          <End Type="ClinicaAspModel.Cita" Role="Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="CedulaPaciente" />
+            </Principal>
+            <Dependent Role="Cita">
+              <PropertyRef Name="CedulaPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FormulaMe__IdCit__1273C1CD">
+          <End Type="ClinicaAspModel.Cita" Role="Cita" Multiplicity="1" />
+          <End Type="ClinicaAspModel.FormulaMedica" Role="FormulaMedica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cita">
+              <PropertyRef Name="IdCita" />
+            </Principal>
+            <Dependent Role="FormulaMedica">
+              <PropertyRef Name="IdCita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClinicaAspModelStoreContainer" CdmEntityContainer="ClinicaAspEntities">
+    <EntitySetMapping Name="Citas">
+      <EntityTypeMapping TypeName="IsTypeOf(ClinicaAspModel.Cita)">
+        <MappingFragment StoreEntitySet="Citas">
+          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+          <ScalarProperty Name="CedulaPaciente" ColumnName="CedulaPaciente" />
+          <ScalarProperty Name="CedulaM" ColumnName="CedulaM" />
+          <ScalarProperty Name="fechacita" ColumnName="fechacita" />
+          <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormulaMedicas">
+      <EntityTypeMapping TypeName="IsTypeOf(ClinicaAspModel.FormulaMedica)">
+        <MappingFragment StoreEntitySet="FormulaMedicas">
+          <ScalarProperty Name="IdFormulaMedica" ColumnName="IdFormulaMedica" />
+          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+          <ScalarProperty Name="RecetaMedica" ColumnName="RecetaMedica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicos">
+      <EntityTypeMapping TypeName="IsTypeOf(ClinicaAspModel.Medico)">
+        <MappingFragment StoreEntitySet="Medicos">
+          <ScalarProperty Name="CedulaM" ColumnName="CedulaM" />
+          <ScalarProperty Name="NombreM" ColumnName="NombreM" />
+          <ScalarProperty Name="ApellidoM" ColumnName="ApellidoM" />
+          <ScalarProperty Name="EmailM" ColumnName="EmailM" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="anionacimiento" ColumnName="anionacimiento" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacientes">
+      <EntityTypeMapping TypeName="IsTypeOf(ClinicaAspModel.Paciente)">
+        <MappingFragment StoreEntitySet="Pacientes">
+          <ScalarProperty Name="CedulaPaciente" ColumnName="CedulaPaciente" />
+          <ScalarProperty Name="NombrePaciente" ColumnName="NombrePaciente" />
+          <ScalarProperty Name="ApellidoPaciente" ColumnName="ApellidoPaciente" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="anionacimiento" ColumnName="anionacimiento" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ClinicaBD">
+        <EntityTypeShape EntityType="ClinicaAspModel.Cita" Width="1.5" PointX="3" PointY="1" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="ClinicaAspModel.FormulaMedica" Width="1.5" PointX="5.25" PointY="1.5" Height="1.7879850260416665" />
+        <EntityTypeShape EntityType="ClinicaAspModel.Medico" Width="1.5" PointX="0.75" PointY="1" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="ClinicaAspModel.Paciente" Width="1.5" PointX="0.75" PointY="5" Height="2.5571907552083317" />
+        <AssociationConnector Association="ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0" >
+          <ConnectorPoint PointX="2.25" PointY="2.37474609375" />
+          <ConnectorPoint PointX="3" PointY="2.37474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877" >
+          <ConnectorPoint PointX="2.25" PointY="6.2785953776041659" />
+          <ConnectorPoint PointX="3.75" PointY="6.2785953776041659" />
+          <ConnectorPoint PointX="3.75" PointY="3.7494921874999996" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD" >
+          <ConnectorPoint PointX="4.5" PointY="2.3939925130208333" />
+          <ConnectorPoint PointX="5.25" PointY="2.3939925130208333" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
