@@ -19,9 +19,9 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.Medico), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Cita), true)]
-[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.Paciente), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Cita), true)]
-[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Cita), "FormulaMedica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.FormulaMedica), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Medicos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.Medicos), "Citas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Citas), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Pacientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.Pacientes), "Citas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Citas), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "Citas", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Citas), "FormulaMedicas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.FormulaMedicas), true)]
 
 #endregion
 
@@ -76,66 +76,66 @@ namespace Clinica_ASP
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Cita> Citas
+        public ObjectSet<Citas> Citas
         {
             get
             {
                 if ((_Citas == null))
                 {
-                    _Citas = base.CreateObjectSet<Cita>("Citas");
+                    _Citas = base.CreateObjectSet<Citas>("Citas");
                 }
                 return _Citas;
             }
         }
-        private ObjectSet<Cita> _Citas;
+        private ObjectSet<Citas> _Citas;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<FormulaMedica> FormulaMedicas
+        public ObjectSet<FormulaMedicas> FormulaMedicas
         {
             get
             {
                 if ((_FormulaMedicas == null))
                 {
-                    _FormulaMedicas = base.CreateObjectSet<FormulaMedica>("FormulaMedicas");
+                    _FormulaMedicas = base.CreateObjectSet<FormulaMedicas>("FormulaMedicas");
                 }
                 return _FormulaMedicas;
             }
         }
-        private ObjectSet<FormulaMedica> _FormulaMedicas;
+        private ObjectSet<FormulaMedicas> _FormulaMedicas;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Medico> Medicos
+        public ObjectSet<Medicos> Medicos
         {
             get
             {
                 if ((_Medicos == null))
                 {
-                    _Medicos = base.CreateObjectSet<Medico>("Medicos");
+                    _Medicos = base.CreateObjectSet<Medicos>("Medicos");
                 }
                 return _Medicos;
             }
         }
-        private ObjectSet<Medico> _Medicos;
+        private ObjectSet<Medicos> _Medicos;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Paciente> Pacientes
+        public ObjectSet<Pacientes> Pacientes
         {
             get
             {
                 if ((_Pacientes == null))
                 {
-                    _Pacientes = base.CreateObjectSet<Paciente>("Pacientes");
+                    _Pacientes = base.CreateObjectSet<Pacientes>("Pacientes");
                 }
                 return _Pacientes;
             }
         }
-        private ObjectSet<Paciente> _Pacientes;
+        private ObjectSet<Pacientes> _Pacientes;
 
         #endregion
 
@@ -144,33 +144,33 @@ namespace Clinica_ASP
         /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet Citas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToCitas(Cita cita)
+        public void AddToCitas(Citas citas)
         {
-            base.AddObject("Citas", cita);
+            base.AddObject("Citas", citas);
         }
     
         /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet FormulaMedicas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToFormulaMedicas(FormulaMedica formulaMedica)
+        public void AddToFormulaMedicas(FormulaMedicas formulaMedicas)
         {
-            base.AddObject("FormulaMedicas", formulaMedica);
+            base.AddObject("FormulaMedicas", formulaMedicas);
         }
     
         /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet Medicos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToMedicos(Medico medico)
+        public void AddToMedicos(Medicos medicos)
         {
-            base.AddObject("Medicos", medico);
+            base.AddObject("Medicos", medicos);
         }
     
         /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet Pacientes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToPacientes(Paciente paciente)
+        public void AddToPacientes(Pacientes pacientes)
         {
-            base.AddObject("Pacientes", paciente);
+            base.AddObject("Pacientes", pacientes);
         }
 
         #endregion
@@ -184,26 +184,26 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Cita")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Citas")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Cita : EntityObject
+    public partial class Citas : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Cita.
+        /// Crear un nuevo objeto Citas.
         /// </summary>
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
         /// <param name="fechacita">Valor inicial de la propiedad fechacita.</param>
         /// <param name="horaCita">Valor inicial de la propiedad HoraCita.</param>
-        public static Cita CreateCita(global::System.Int32 idCita, global::System.String fechacita, global::System.String horaCita)
+        public static Citas CreateCitas(global::System.Int32 idCita, global::System.String fechacita, global::System.String horaCita)
         {
-            Cita cita = new Cita();
-            cita.IdCita = idCita;
-            cita.fechacita = fechacita;
-            cita.HoraCita = horaCita;
-            return cita;
+            Citas citas = new Citas();
+            citas.IdCita = idCita;
+            citas.fechacita = fechacita;
+            citas.HoraCita = horaCita;
+            return citas;
         }
 
         #endregion
@@ -368,16 +368,16 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Medico")]
-        public Medico Medico
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Medicos")]
+        public Medicos Medicos
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medico>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medico").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medico>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medico").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos").Value = value;
             }
         }
         /// <summary>
@@ -385,17 +385,17 @@ namespace Clinica_ASP
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Medico> MedicoReference
+        public EntityReference<Medicos> MedicosReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medico>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medico");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Medico>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medico", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos", value);
                 }
             }
         }
@@ -406,16 +406,16 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Paciente")]
-        public Paciente Paciente
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Pacientes")]
+        public Pacientes Pacientes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Paciente>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Paciente").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Paciente>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Paciente").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes").Value = value;
             }
         }
         /// <summary>
@@ -423,17 +423,17 @@ namespace Clinica_ASP
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Paciente> PacienteReference
+        public EntityReference<Pacientes> PacientesReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Paciente>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Paciente");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Paciente>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Paciente", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes", value);
                 }
             }
         }
@@ -444,18 +444,18 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "FormulaMedica")]
-        public EntityCollection<FormulaMedica> FormulaMedicas
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "FormulaMedicas")]
+        public EntityCollection<FormulaMedicas> FormulaMedicas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<FormulaMedica>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "FormulaMedica");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<FormulaMedicas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "FormulaMedicas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<FormulaMedica>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "FormulaMedica", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<FormulaMedicas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "FormulaMedicas", value);
                 }
             }
         }
@@ -467,26 +467,26 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="FormulaMedica")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="FormulaMedicas")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class FormulaMedica : EntityObject
+    public partial class FormulaMedicas : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto FormulaMedica.
+        /// Crear un nuevo objeto FormulaMedicas.
         /// </summary>
         /// <param name="idFormulaMedica">Valor inicial de la propiedad IdFormulaMedica.</param>
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
         /// <param name="recetaMedica">Valor inicial de la propiedad RecetaMedica.</param>
-        public static FormulaMedica CreateFormulaMedica(global::System.Int32 idFormulaMedica, global::System.Int32 idCita, global::System.String recetaMedica)
+        public static FormulaMedicas CreateFormulaMedicas(global::System.Int32 idFormulaMedica, global::System.Int32 idCita, global::System.String recetaMedica)
         {
-            FormulaMedica formulaMedica = new FormulaMedica();
-            formulaMedica.IdFormulaMedica = idFormulaMedica;
-            formulaMedica.IdCita = idCita;
-            formulaMedica.RecetaMedica = recetaMedica;
-            return formulaMedica;
+            FormulaMedicas formulaMedicas = new FormulaMedicas();
+            formulaMedicas.IdFormulaMedica = idFormulaMedica;
+            formulaMedicas.IdCita = idCita;
+            formulaMedicas.RecetaMedica = recetaMedica;
+            return formulaMedicas;
         }
 
         #endregion
@@ -579,16 +579,16 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "Cita")]
-        public Cita Cita
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "Citas")]
+        public Citas Citas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Cita").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Cita").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas").Value = value;
             }
         }
         /// <summary>
@@ -596,17 +596,17 @@ namespace Clinica_ASP
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Cita> CitaReference
+        public EntityReference<Citas> CitasReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Cita");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Cita", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas", value);
                 }
             }
         }
@@ -618,15 +618,15 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Medico")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Medicos")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Medico : EntityObject
+    public partial class Medicos : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Medico.
+        /// Crear un nuevo objeto Medicos.
         /// </summary>
         /// <param name="cedulaM">Valor inicial de la propiedad CedulaM.</param>
         /// <param name="nombreM">Valor inicial de la propiedad NombreM.</param>
@@ -635,17 +635,17 @@ namespace Clinica_ASP
         /// <param name="contrasena">Valor inicial de la propiedad contrasena.</param>
         /// <param name="anionacimiento">Valor inicial de la propiedad anionacimiento.</param>
         /// <param name="especialidad">Valor inicial de la propiedad Especialidad.</param>
-        public static Medico CreateMedico(global::System.Int32 cedulaM, global::System.String nombreM, global::System.String apellidoM, global::System.String emailM, global::System.String contrasena, global::System.DateTime anionacimiento, global::System.String especialidad)
+        public static Medicos CreateMedicos(global::System.Int32 cedulaM, global::System.String nombreM, global::System.String apellidoM, global::System.String emailM, global::System.String contrasena, global::System.DateTime anionacimiento, global::System.String especialidad)
         {
-            Medico medico = new Medico();
-            medico.CedulaM = cedulaM;
-            medico.NombreM = nombreM;
-            medico.ApellidoM = apellidoM;
-            medico.EmailM = emailM;
-            medico.contrasena = contrasena;
-            medico.anionacimiento = anionacimiento;
-            medico.Especialidad = especialidad;
-            return medico;
+            Medicos medicos = new Medicos();
+            medicos.CedulaM = cedulaM;
+            medicos.NombreM = nombreM;
+            medicos.ApellidoM = apellidoM;
+            medicos.EmailM = emailM;
+            medicos.contrasena = contrasena;
+            medicos.anionacimiento = anionacimiento;
+            medicos.Especialidad = especialidad;
+            return medicos;
         }
 
         #endregion
@@ -858,18 +858,18 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Cita")]
-        public EntityCollection<Cita> Citas
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Citas")]
+        public EntityCollection<Citas> Citas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cita>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Cita");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Citas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Cita", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Citas", value);
                 }
             }
         }
@@ -881,15 +881,15 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Paciente")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Pacientes")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Paciente : EntityObject
+    public partial class Pacientes : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Paciente.
+        /// Crear un nuevo objeto Pacientes.
         /// </summary>
         /// <param name="cedulaPaciente">Valor inicial de la propiedad CedulaPaciente.</param>
         /// <param name="nombrePaciente">Valor inicial de la propiedad NombrePaciente.</param>
@@ -897,16 +897,16 @@ namespace Clinica_ASP
         /// <param name="email">Valor inicial de la propiedad Email.</param>
         /// <param name="contrasena">Valor inicial de la propiedad contrasena.</param>
         /// <param name="anionacimiento">Valor inicial de la propiedad anionacimiento.</param>
-        public static Paciente CreatePaciente(global::System.Int32 cedulaPaciente, global::System.String nombrePaciente, global::System.String apellidoPaciente, global::System.String email, global::System.String contrasena, global::System.DateTime anionacimiento)
+        public static Pacientes CreatePacientes(global::System.Int32 cedulaPaciente, global::System.String nombrePaciente, global::System.String apellidoPaciente, global::System.String email, global::System.String contrasena, global::System.DateTime anionacimiento)
         {
-            Paciente paciente = new Paciente();
-            paciente.CedulaPaciente = cedulaPaciente;
-            paciente.NombrePaciente = nombrePaciente;
-            paciente.ApellidoPaciente = apellidoPaciente;
-            paciente.Email = email;
-            paciente.contrasena = contrasena;
-            paciente.anionacimiento = anionacimiento;
-            return paciente;
+            Pacientes pacientes = new Pacientes();
+            pacientes.CedulaPaciente = cedulaPaciente;
+            pacientes.NombrePaciente = nombrePaciente;
+            pacientes.ApellidoPaciente = apellidoPaciente;
+            pacientes.Email = email;
+            pacientes.contrasena = contrasena;
+            pacientes.anionacimiento = anionacimiento;
+            return pacientes;
         }
 
         #endregion
@@ -1095,18 +1095,18 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Cita")]
-        public EntityCollection<Cita> Citas
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Citas")]
+        public EntityCollection<Citas> Citas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cita>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Cita");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Citas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Cita", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Citas", value);
                 }
             }
         }

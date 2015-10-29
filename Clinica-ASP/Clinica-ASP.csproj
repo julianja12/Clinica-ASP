@@ -13,6 +13,7 @@
     <RootNamespace>Clinica_ASP</RootNamespace>
     <AssemblyName>Clinica-ASP</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,18 +56,21 @@
   <ItemGroup>
     <Content Include="AdministracionCitas.aspx" />
     <Content Include="ClinicaBD.edmx.sql" />
+    <Content Include="Contactenos.aspx" />
     <Content Include="Estilos\bootstrap-theme.css" />
     <Content Include="Estilos\bootstrap-theme.min.css" />
     <Content Include="Estilos\bootstrap.css" />
     <Content Include="Estilos\bootstrap.min.css" />
+    <Content Include="Estilos\estilos.css" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Img\Clinica.jpg" />
     <Content Include="Img\contacto.jpg" />
-    <Content Include="Scritps\bootstrap.js" />
-    <Content Include="Scritps\bootstrap.min.js" />
-    <Content Include="Scritps\jquery-1.11.3.min.js" />
-    <Content Include="Scritps\jquery.js" />
-    <Content Include="Scritps\npm.js" />
+    <Content Include="PaginadeInicio.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -87,6 +91,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaBD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contactenos.aspx.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactenos.aspx.designer.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginadeInicio.aspx.cs">
+      <DependentUpon>PaginadeInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginadeInicio.aspx.designer.cs">
+      <DependentUpon>PaginadeInicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="PgMaster.Master.cs">
       <DependentUpon>PgMaster.Master</DependentUpon>
