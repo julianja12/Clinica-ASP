@@ -103,8 +103,8 @@
                 </tr>
                 <tr>
                     <td class="style14" colspan="2">
-                        <span style="color: rgb(77, 77, 77); font-family: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 500; letter-spacing: normal; line-height: 34px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
-                        Comentario, duda o sugerencia:</span></td>
+                    <asp:Label ID="Label4" runat="server" Text="Comentario, duda o sugerencia"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="style14" colspan="2">
@@ -128,22 +128,14 @@
 
             </div>
         
-
             <div class="col-md-6 hidden-xs hidden-sm" id="Mapa">
                     <h4>Ubicación Geográfica de la clínica</h4>
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3334.9028277794996!2d-75.58069244576527!3d6.278167774998032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xd3d0db8860f8092e!2sCemev+IPS+Robledo!5e0!3m2!1ses-419!2sco!4v1443050444386" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
             </div>
-
-            <div>
-                <img src="Img/contacto.jpg" alt="Logo" id="contactoimg" class="col-md-6 hidden-xs hidden-sm"/>
-            </div>
-
         </div>
 
     </form>
-
-    </span>
 
 </asp:Content>

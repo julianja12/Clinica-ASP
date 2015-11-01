@@ -1,42 +1,22 @@
-﻿.navbar {
+﻿body { 
+  background: url('../../Img/fondo-gris.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+.panel-default {
+opacity: 0.7;
+margin-top:30px;
+}
+
+.form-group.last { margin-bottom:0px; 
+}                   
+
+.navbar {
 	margin-bottom: 0;
-}
-
-#login-FEG{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,8);
-}
-
-#login-FEG .help-block{
-    font-size:12px    
-}
-
-#login-FEG .bottom{
-    background-color:rgba(255,255,255,8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-
-#login-FEG .form-group {
-    margin-bottom: 10px;
-}
-
-@media(max-width:768px){ 
-    #login-FEG{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-FEG .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
-}
-
-#login-FEG .form-group {
-    margin-bottom: 10px;
 }
 
 #Mapa
@@ -46,56 +26,61 @@ text-align: center;
 margin-top: 20px;
 }
 
+#LabelFechadenacimiento
+{
+   color: Gray;
+}
 
-  .style3
-        {
-            color: rgb(0, 0, 153);
-        }
-        .style4
-        {
-            font-size: medium;
-        }
-        .style6
-        {
-            font-size: small;
-        }
-        .style7
-        {
-            color: #FF0000;
-        }
-        .style8
-        {
-            color: #000000;
-        }
-        .style11
-        {
-            text-align: center;
-            color: #000000;
-        }
-        .style12
-        {
-            font-size: small;
-            font-family: Geneva, Tahoma, "Nimbus Sans L", sans-serif;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: normal;
-            letter-spacing: normal;
-            line-height: 16.2px;
-            text-align: justify;
-            text-indent: 0px;
-            text-transform: none;
-            white-space: normal;
-            word-spacing: 0px;
-            margin-top: 10px;
-            margin-bottom: 15px;}
+.style3
+    {
+        color: rgb(0, 0, 153);
+    }
+    .style4
+    {
+        font-size: medium;
+    }
+    .style6
+    {
+        font-size: small;
+    }
+    .style7
+    {
+        color: #FF0000;
+    }
+    .style8
+    {
+        color: #000000;
+    }
+    .style11
+    {
+        text-align: center;
+        color: #000000;
+    }
+    .style12
+    {
+        font-size: small;
+        font-family: Geneva, Tahoma, "Nimbus Sans L", sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        letter-spacing: normal;
+        line-height: 16.2px;
+        text-align: justify;
+        text-indent: 0px;
+        text-transform: none;
+        white-space: normal;
+        word-spacing: 0px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
             
-           #contactoimg
-           {
-               float:right;
-               margin-top: 30px;
-               height: 260px;
-               width:inherit;
-            }
+        #contactoimg
+        {
+            float:right;
+            margin-top: 30px;
+            height: 260px;
+            width:inherit;
+        }
 
 .contentC
 {

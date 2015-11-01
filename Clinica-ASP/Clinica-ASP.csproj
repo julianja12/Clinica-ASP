@@ -65,7 +65,9 @@
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Img\Clinica.jpg" />
     <Content Include="Img\contacto.jpg" />
+    <Content Include="Img\fondo-gris.png" />
     <Content Include="PaginadeInicio.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
@@ -114,6 +116,13 @@
       <DependentUpon>PgMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ClinicaBD.edmx">

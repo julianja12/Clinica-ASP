@@ -43,43 +43,6 @@
                             <li><a href="PaginadeInicio.aspx" id="CerrarSesion" class="button" runat="server" onserverclick="CerrarSesionAction_Click" CausesValidation="False">Cerrar Sesión</a></li>
                         </ul>   
                     </li>
-                <!-- Inicia el Login-->
-                    <li id ="loginPrincipal" class="dropdown" runat="server">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            Login <span class="caret"></span>
-                        </a>
-                        <ul id="login-FEG" class="dropdown-menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form runat="server">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="lblEmail">Correo Electrónico</label>
-                                                <%--<asp:TextBox class="form-control" ID="txtEmail" placeholder="Correo Electrónico" runat="server"></asp:TextBox>--%>
-                                                <input type="text" class="form-control" id="txtEmail" runat="server" placeholder="Correo Electrónico" required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only" for="lblPass">Contraseña</label>
-                                                <input type="password" class="form-control" id="txtPass" runat="server" placeholder="Contraseña" required/>
-                                                <asp:Label ID="lblMensaje" runat="server" Text="" ForeColor="Red"></asp:Label>
-                                                <%--<div class="help-block text-right"><a href="">¿Olvido la contraseña?</a></div>--%>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary btn-block" id="btnIngresar" runat="server" onserverclick="IngresarAction_Click">Ingresar</button>
-                                            <br/>
-                                            <%--<div class="checkbox">
-                                                <label>
-                                                <input type="checkbox"> Recordar contraseña
-                                                </label>
-                                            </div>--%>
-                                        </form>
-                                    </div>
-                                    <div class="bottom text-center">
-                                        <a href="Registro.aspx"><b>Registrarse</b></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>    
@@ -91,7 +54,7 @@
 </div>
 
 <footer> 
- 
+<hr>
     <div class="row">
             <div class="col-md-6 hidden-xs hidden-sm">
                 <ul class="list-unstyled list-inline pull-right">
