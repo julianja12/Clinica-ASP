@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
+using System.Net.Mail;
 
 namespace Clinica_ASP
 {
@@ -19,40 +20,70 @@ namespace Clinica_ASP
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
+            //Verifica si el email ingresado ya se encuentra en la base de datos
+
+            ClinicaAspEntities db = new ClinicaAspEntities();
+
+            string verificarEmail = (from p in db.Pacientes
+                                  where p.Email == txtEmail.Value
+                                  select p.Email).FirstOrDefault();
+
+            int Identificacion = Convert.ToInt32(txtIdentificacion.Value);
+
+            int verificarCedula = (from p in db.Pacientes
+                                  where p.CedulaPaciente == Identificacion
+                                  select p.CedulaPaciente).FirstOrDefault();
+
+            if (verificarEmail!=null)
             {
-
-                Pacientes nuevaPersona = new Pacientes();
-                nuevaPersona.CedulaPaciente = Convert.ToInt32(txtIdentificacion.Value);
-                nuevaPersona.NombrePaciente = txtNombres.Value;
-                nuevaPersona.ApellidoPaciente = txtApellidos.Value;
-                nuevaPersona.telefono = Convert.ToInt32(txtTelefono.Value);
-                nuevaPersona.anionacimiento = Convert.ToDateTime(DateFecha.Value);
-                nuevaPersona.Email = txtEmail.Value;
-
-                if (EncriptacionMD5(txtPass.Value).Equals(EncriptacionMD5(txtPassValidar.Value)))
-                {
-                    nuevaPersona.contrasena = EncriptacionMD5(txtPass.Value);
-                    try
-                    {
-                        oConexion.SaveChanges();
-                        Response.Write("<script LANGUAGE='JavaScript' >alert('Te has registrado correctamente')</script>");
-                    }
-                    catch (Exception ex)
-                    {
-                        LblValidarEmail.Text = ex.Message;
-                        Response.Write("<script LANGUAGE='JavaScript' >alert('Error!')</script>");
-                    }
-                }
-                else
-                {
-                    //Mensaje encima o debajo del campo Verificar Contraseña
-                    LblValidarEmail.Text = "Las contraseñas ingresadas deben coincidir";
-                }
-
-                oConexion.AddToPacientes(nuevaPersona);
-                oConexion.SaveChanges();
+                LblValidarEmail.Text = "El correo " +verificarEmail +" ya se encuentra registrado";
             }
+            else if (verificarCedula == Identificacion)
+	        {
+                LblValidarEmail.Text = "";
+                LblValidarId.Text = "Este documento " + verificarCedula + " ya se encuentra registrado";     
+	        }
+            else
+            {
+                LblValidarId.Text = "";
+                using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
+                {
+
+                    Pacientes nuevaPersona = new Pacientes();
+                    nuevaPersona.CedulaPaciente = Identificacion;
+                    nuevaPersona.NombrePaciente = txtNombres.Value;
+                    nuevaPersona.ApellidoPaciente = txtApellidos.Value;
+                    nuevaPersona.telefono = Convert.ToInt32(txtTelefono.Value);
+                    nuevaPersona.anionacimiento = Convert.ToDateTime(DateFecha.Value);
+                    nuevaPersona.Email = txtEmail.Value;
+
+                    if (EncriptacionMD5(txtPass.Value).Equals(EncriptacionMD5(txtPassValidar.Value)))
+                    {
+                        nuevaPersona.contrasena = EncriptacionMD5(txtPass.Value);
+                        try
+                        {
+                            oConexion.SaveChanges();
+                            Mensajedebienvenida(txtEmail.Value, txtNombres.Value);
+                            Response.Write("<script LANGUAGE='JavaScript' >alert('Te has registrado correctamente')</script>");
+                        }
+                        catch (Exception ex)
+                        {
+                            LblValidarEmail.Text = ex.Message;
+                            Response.Write("<script LANGUAGE='JavaScript' >alert('Error!')</script>");
+                        }
+                    }
+                    else
+                    {
+                        //Mensaje encima o debajo del campo Verificar Contraseña
+                        LblValidarEmail.Text = "Las contraseñas ingresadas deben coincidir";
+                    }
+
+                    oConexion.AddToPacientes(nuevaPersona);
+                    oConexion.SaveChanges();
+                }
+            }
+
+            
         }
 
         protected void BtnCancelar_Click(object sender, EventArgs e)
@@ -69,6 +100,24 @@ namespace Clinica_ASP
             stream = md5.ComputeHash(encoding.GetBytes(Pass));
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
             return sb.ToString();
+        }
+
+        public void Mensajedebienvenida(string CorreoUsuario, string NombreUsuario)
+        {
+            string mensaje = NombreUsuario + "\n"+"\n" + "Gracias por registrarse en Portal Salud Web" + "\n" + "De click al siguiente enlace para ingresar a la pagina " + "http://localhost:48314/PaginadeInicio.aspx"; 
+  
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
+            mail.Subject = "Gracias por registrarse en Portal Salud Web";
+            mail.Body = mensaje;
+            mail.To.Add(CorreoUsuario);
+
+            SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
+
+            SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
+            SmtpServer.EnableSsl = true;
+            SmtpServer.Send(mail);
         }
     }
 }

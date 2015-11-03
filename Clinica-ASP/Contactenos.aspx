@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PgMaster.Master" AutoEventWireup="true" CodeBehind="Contactenos.aspx.cs" Inherits="Funlam_2015_02_Clinica_Web.Contactenos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="Estilos/estilos.css" rel="stylesheet" type="text/css" />
-    <link href="Estilos/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .style13
         {

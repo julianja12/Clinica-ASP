@@ -24,10 +24,11 @@
 			    <div class="form-group">
 				    <input type="text" runat="server" id="txtIdentificacion" class="form-control input-lg" placeholder="Documento de identificación" tabindex="3" required/>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidatorIdentificacion" runat="server" ErrorMessage="Ingrese tu documento de identificación" ForeColor="Red" ControlToValidate="txtIdentificacion" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
+                    <asp:Label ID="LblValidarId" runat="server" ForeColor="Red"></asp:Label>
 			    </div>
 			    <div class="form-group">
 				    <input type="text" runat="server" id="txtEmail" class="form-control input-lg" placeholder="Correo electrónico" tabindex="4" required/>
-                    <asp:Label ID="LblValidarEmail" runat="server" ></asp:Label>
+                    <asp:Label ID="LblValidarEmail" runat="server" ForeColor="Red"></asp:Label>
 			    </div>
 			    <div class="form-group">
 				    <input type="text" runat="server" id="txtTelefono" class="form-control input-lg" placeholder="Número de contacto" tabindex="5" required/>
@@ -62,7 +63,7 @@
 				    <div class="col-xs-12 col-md-6">
                      <asp:Button class="btn btn-primary" tabindex="9" ID="btnRegistrar" runat="server" Text="Registrarse" onclick="btnRegistrar_Click" CausesValidation="true"/>
                      <asp:Button class="btn btn-warning" tabindex="10" ID="BtnCancelar" runat="server" 
-                            Text="Cancelar" CausesValidation="false" onclick="BtnCancelar_Click"/>
+                            Text="Cancelar" CausesValidation="False" onclick="BtnCancelar_Click" formnovalidate/>
                     </div>
 			    </div>
 	    </div>
