@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h2>ALGUN TEXTO</h2>
+            <h2>Bienvenidos A la Pagina Web</h2>
         </div>
     </div>
 

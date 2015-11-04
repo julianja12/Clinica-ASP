@@ -34,41 +34,48 @@ namespace Clinica_ASP
 
             ClinicaAspEntities db = new ClinicaAspEntities();
 
-            string queryPaciente = (from n in db.Pacientes
-                                    where n.Email == email && n.contrasena == pass
-                                    select n.NombrePaciente).FirstOrDefault();
+            string queryUsuario = (from n in db.Usuario
+                                    where n.Email == email && n.Contrasena == pass
+                                    select n.NombreUsuario).FirstOrDefault();
 
-            string queryMedico = (from n in db.Medicos
-                                  where n.EmailM == email && n.contrasena == pass
-                                  select n.NombreM).FirstOrDefault();
 
-            if (queryPaciente != null)
-            {
-                int cedula = (from c in db.Pacientes
-                              where c.Email == email && c.contrasena == pass
-                              select c.CedulaPaciente).FirstOrDefault();
+            int cedula = (from c in db.Usuario
+                          where c.Email == email && c.Contrasena == pass
+                          select c.Cedula).FirstOrDefault();
 
-                Session["cedula"] = cedula.ToString();
-                Session["tipousuario"] = "Paciente";
-                Session["nombre"] = queryPaciente;
-                loginUsuarios.Visible = false;
-                Response.Redirect("PaginadeInicio.aspx");
-            }
-            else if (queryMedico != null)
+
+            int IdTipo = (from t in db.TipoUsuario
+                          where t.Cedula == cedula
+                          select t.IdTipoUsuario).FirstOrDefault();
+
+            if (queryUsuario != null)
             {
-                int cedula = (from c in db.Medicos
-                              where c.EmailM == email && c.contrasena == pass
-                              select c.CedulaM).FirstOrDefault();
-                Session["cedula"] = cedula.ToString();
-                Session["tipousuario"] = "Medico";
-                Session["nombre"] = queryMedico;
-                loginUsuarios.Visible = false;
-                Response.Redirect("PaginadeInicio.aspx");
+                if (IdTipo == 1)
+                {
+                    Session["user"] = queryUsuario;
+                    Response.Redirect("AdministacionUsuarios.aspx");
+
+                }
+                else if (IdTipo == 2)
+                {
+
+                    Session["user"] = queryUsuario;
+                    Response.Redirect("PaginadeInicio.aspx");
+                }
+
+                else if (IdTipo == 3)
+                {
+
+                    Session["user"] = queryUsuario;
+                    Session["cedula"] = cedula;
+                    Response.Redirect("AdministracionCitas.aspx");
+                }
             }
-            else
-            {
-                lblMensaje.Text = "Usuario o Contraseña Incorrecto";
-            }
+                
+                else
+                {
+                    lblMensaje.Text = "Usuario o Contraseña Incorrecto";
+                }
         }
 
         public static string EncriptacionMD5(string Pass)

@@ -24,15 +24,15 @@ namespace Clinica_ASP
 
             ClinicaAspEntities db = new ClinicaAspEntities();
 
-            string verificarEmail = (from p in db.Pacientes
+            string verificarEmail = (from p in db.Usuario
                                   where p.Email == txtEmail.Value
                                   select p.Email).FirstOrDefault();
 
             int Identificacion = Convert.ToInt32(txtIdentificacion.Value);
 
-            int verificarCedula = (from p in db.Pacientes
-                                  where p.CedulaPaciente == Identificacion
-                                  select p.CedulaPaciente).FirstOrDefault();
+            int verificarCedula = (from p in db.Usuario
+                                  where p.Cedula == Identificacion
+                                  select p.Cedula).FirstOrDefault();
 
             if (verificarEmail!=null)
             {
@@ -49,17 +49,17 @@ namespace Clinica_ASP
                 using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
                 {
 
-                    Pacientes nuevaPersona = new Pacientes();
-                    nuevaPersona.CedulaPaciente = Identificacion;
-                    nuevaPersona.NombrePaciente = txtNombres.Value;
-                    nuevaPersona.ApellidoPaciente = txtApellidos.Value;
+                    Usuario nuevaPersona = new Usuario();
+                    nuevaPersona.Cedula = Identificacion;
+                    nuevaPersona.NombreUsuario = txtNombres.Value;
+                    nuevaPersona.ApellidoUsuario = txtApellidos.Value;
                     nuevaPersona.telefono = Convert.ToInt32(txtTelefono.Value);
                     nuevaPersona.anionacimiento = Convert.ToDateTime(DateFecha.Value);
                     nuevaPersona.Email = txtEmail.Value;
 
                     if (EncriptacionMD5(txtPass.Value).Equals(EncriptacionMD5(txtPassValidar.Value)))
                     {
-                        nuevaPersona.contrasena = EncriptacionMD5(txtPass.Value);
+                        nuevaPersona.Contrasena = EncriptacionMD5(txtPass.Value);
                         try
                         {
                             oConexion.SaveChanges();
@@ -78,7 +78,7 @@ namespace Clinica_ASP
                         LblValidarEmail.Text = "Las contraseñas ingresadas deben coincidir";
                     }
 
-                    oConexion.AddToPacientes(nuevaPersona);
+                    oConexion.AddToUsuario(nuevaPersona);
                     oConexion.SaveChanges();
                 }
             }

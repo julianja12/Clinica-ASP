@@ -19,9 +19,9 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Medicos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.Medicos), "Citas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Citas), true)]
-[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Pacientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.Pacientes), "Citas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Citas), true)]
-[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "Citas", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Citas), "FormulaMedicas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.FormulaMedicas), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__Cedula__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Cita), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__0EA330E9", "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Cita), "FormulaMedica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.FormulaMedica), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__TipoUsuar__Cedul__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.TipoUsuario), true)]
 
 #endregion
 
@@ -76,101 +76,101 @@ namespace Clinica_ASP
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Citas> Citas
+        public ObjectSet<Cita> Cita
         {
             get
             {
-                if ((_Citas == null))
+                if ((_Cita == null))
                 {
-                    _Citas = base.CreateObjectSet<Citas>("Citas");
+                    _Cita = base.CreateObjectSet<Cita>("Cita");
                 }
-                return _Citas;
+                return _Cita;
             }
         }
-        private ObjectSet<Citas> _Citas;
+        private ObjectSet<Cita> _Cita;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<FormulaMedicas> FormulaMedicas
+        public ObjectSet<FormulaMedica> FormulaMedica
         {
             get
             {
-                if ((_FormulaMedicas == null))
+                if ((_FormulaMedica == null))
                 {
-                    _FormulaMedicas = base.CreateObjectSet<FormulaMedicas>("FormulaMedicas");
+                    _FormulaMedica = base.CreateObjectSet<FormulaMedica>("FormulaMedica");
                 }
-                return _FormulaMedicas;
+                return _FormulaMedica;
             }
         }
-        private ObjectSet<FormulaMedicas> _FormulaMedicas;
+        private ObjectSet<FormulaMedica> _FormulaMedica;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Medicos> Medicos
+        public ObjectSet<TipoUsuario> TipoUsuario
         {
             get
             {
-                if ((_Medicos == null))
+                if ((_TipoUsuario == null))
                 {
-                    _Medicos = base.CreateObjectSet<Medicos>("Medicos");
+                    _TipoUsuario = base.CreateObjectSet<TipoUsuario>("TipoUsuario");
                 }
-                return _Medicos;
+                return _TipoUsuario;
             }
         }
-        private ObjectSet<Medicos> _Medicos;
+        private ObjectSet<TipoUsuario> _TipoUsuario;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Pacientes> Pacientes
+        public ObjectSet<Usuario> Usuario
         {
             get
             {
-                if ((_Pacientes == null))
+                if ((_Usuario == null))
                 {
-                    _Pacientes = base.CreateObjectSet<Pacientes>("Pacientes");
+                    _Usuario = base.CreateObjectSet<Usuario>("Usuario");
                 }
-                return _Pacientes;
+                return _Usuario;
             }
         }
-        private ObjectSet<Pacientes> _Pacientes;
+        private ObjectSet<Usuario> _Usuario;
 
         #endregion
 
         #region Métodos AddTo
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Citas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Cita. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToCitas(Citas citas)
+        public void AddToCita(Cita cita)
         {
-            base.AddObject("Citas", citas);
+            base.AddObject("Cita", cita);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet FormulaMedicas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet FormulaMedica. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToFormulaMedicas(FormulaMedicas formulaMedicas)
+        public void AddToFormulaMedica(FormulaMedica formulaMedica)
         {
-            base.AddObject("FormulaMedicas", formulaMedicas);
+            base.AddObject("FormulaMedica", formulaMedica);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Medicos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet TipoUsuario. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToMedicos(Medicos medicos)
+        public void AddToTipoUsuario(TipoUsuario tipoUsuario)
         {
-            base.AddObject("Medicos", medicos);
+            base.AddObject("TipoUsuario", tipoUsuario);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Pacientes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Usuario. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToPacientes(Pacientes pacientes)
+        public void AddToUsuario(Usuario usuario)
         {
-            base.AddObject("Pacientes", pacientes);
+            base.AddObject("Usuario", usuario);
         }
 
         #endregion
@@ -184,26 +184,30 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Citas")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Cita")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Citas : EntityObject
+    public partial class Cita : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Citas.
+        /// Crear un nuevo objeto Cita.
         /// </summary>
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
-        /// <param name="fechacita">Valor inicial de la propiedad fechacita.</param>
+        /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
+        /// <param name="fechaCita">Valor inicial de la propiedad FechaCita.</param>
         /// <param name="horaCita">Valor inicial de la propiedad HoraCita.</param>
-        public static Citas CreateCitas(global::System.Int32 idCita, global::System.String fechacita, global::System.String horaCita)
+        /// <param name="descripcion">Valor inicial de la propiedad Descripcion.</param>
+        public static Cita CreateCita(global::System.Int32 idCita, global::System.Int32 cedula, global::System.DateTime fechaCita, global::System.String horaCita, global::System.String descripcion)
         {
-            Citas citas = new Citas();
-            citas.IdCita = idCita;
-            citas.fechacita = fechacita;
-            citas.HoraCita = horaCita;
-            return citas;
+            Cita cita = new Cita();
+            cita.IdCita = idCita;
+            cita.Cedula = cedula;
+            cita.FechaCita = fechaCita;
+            cita.HoraCita = horaCita;
+            cita.Descripcion = descripcion;
+            return cita;
         }
 
         #endregion
@@ -240,74 +244,50 @@ namespace Clinica_ASP
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> CedulaPaciente
+        public global::System.Int32 Cedula
         {
             get
             {
-                return _CedulaPaciente;
+                return _Cedula;
             }
             set
             {
-                OnCedulaPacienteChanging(value);
-                ReportPropertyChanging("CedulaPaciente");
-                _CedulaPaciente = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CedulaPaciente");
-                OnCedulaPacienteChanged();
+                OnCedulaChanging(value);
+                ReportPropertyChanging("Cedula");
+                _Cedula = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cedula");
+                OnCedulaChanged();
             }
         }
-        private Nullable<global::System.Int32> _CedulaPaciente;
-        partial void OnCedulaPacienteChanging(Nullable<global::System.Int32> value);
-        partial void OnCedulaPacienteChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> CedulaM
-        {
-            get
-            {
-                return _CedulaM;
-            }
-            set
-            {
-                OnCedulaMChanging(value);
-                ReportPropertyChanging("CedulaM");
-                _CedulaM = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CedulaM");
-                OnCedulaMChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _CedulaM;
-        partial void OnCedulaMChanging(Nullable<global::System.Int32> value);
-        partial void OnCedulaMChanged();
+        private global::System.Int32 _Cedula;
+        partial void OnCedulaChanging(global::System.Int32 value);
+        partial void OnCedulaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String fechacita
+        public global::System.DateTime FechaCita
         {
             get
             {
-                return _fechacita;
+                return _FechaCita;
             }
             set
             {
-                OnfechacitaChanging(value);
-                ReportPropertyChanging("fechacita");
-                _fechacita = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("fechacita");
-                OnfechacitaChanged();
+                OnFechaCitaChanging(value);
+                ReportPropertyChanging("FechaCita");
+                _FechaCita = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("FechaCita");
+                OnFechaCitaChanged();
             }
         }
-        private global::System.String _fechacita;
-        partial void OnfechacitaChanging(global::System.String value);
-        partial void OnfechacitaChanged();
+        private global::System.DateTime _FechaCita;
+        partial void OnFechaCitaChanging(global::System.DateTime value);
+        partial void OnFechaCitaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -336,7 +316,7 @@ namespace Clinica_ASP
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Descripcion
         {
@@ -348,7 +328,7 @@ namespace Clinica_ASP
             {
                 OnDescripcionChanging(value);
                 ReportPropertyChanging("Descripcion");
-                _Descripcion = StructuralObject.SetValidValue(value, true);
+                _Descripcion = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Descripcion");
                 OnDescripcionChanged();
             }
@@ -368,16 +348,16 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Medicos")]
-        public Medicos Medicos
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__Cedula__09DE7BCC", "Usuario")]
+        public Usuario Usuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK__Cita__Cedula__09DE7BCC", "Usuario").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK__Cita__Cedula__09DE7BCC", "Usuario").Value = value;
             }
         }
         /// <summary>
@@ -385,17 +365,17 @@ namespace Clinica_ASP
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Medicos> MedicosReference
+        public EntityReference<Usuario> UsuarioReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK__Cita__Cedula__09DE7BCC", "Usuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Medicos>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Medicos", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("ClinicaAspModel.FK__Cita__Cedula__09DE7BCC", "Usuario", value);
                 }
             }
         }
@@ -406,56 +386,18 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Pacientes")]
-        public Pacientes Pacientes
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__0EA330E9", "FormulaMedica")]
+        public EntityCollection<FormulaMedica> FormulaMedica
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Pacientes> PacientesReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<FormulaMedica>("ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9", "FormulaMedica");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Pacientes>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Pacientes", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "FormulaMedicas")]
-        public EntityCollection<FormulaMedicas> FormulaMedicas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<FormulaMedicas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "FormulaMedicas");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<FormulaMedicas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "FormulaMedicas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<FormulaMedica>("ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9", "FormulaMedica", value);
                 }
             }
         }
@@ -467,31 +409,55 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="FormulaMedicas")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="FormulaMedica")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class FormulaMedicas : EntityObject
+    public partial class FormulaMedica : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto FormulaMedicas.
+        /// Crear un nuevo objeto FormulaMedica.
         /// </summary>
-        /// <param name="idFormulaMedica">Valor inicial de la propiedad IdFormulaMedica.</param>
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
+        /// <param name="idFormulaMedica">Valor inicial de la propiedad IdFormulaMedica.</param>
         /// <param name="recetaMedica">Valor inicial de la propiedad RecetaMedica.</param>
-        public static FormulaMedicas CreateFormulaMedicas(global::System.Int32 idFormulaMedica, global::System.Int32 idCita, global::System.String recetaMedica)
+        public static FormulaMedica CreateFormulaMedica(global::System.Int32 idCita, global::System.Int32 idFormulaMedica, global::System.String recetaMedica)
         {
-            FormulaMedicas formulaMedicas = new FormulaMedicas();
-            formulaMedicas.IdFormulaMedica = idFormulaMedica;
-            formulaMedicas.IdCita = idCita;
-            formulaMedicas.RecetaMedica = recetaMedica;
-            return formulaMedicas;
+            FormulaMedica formulaMedica = new FormulaMedica();
+            formulaMedica.IdCita = idCita;
+            formulaMedica.IdFormulaMedica = idFormulaMedica;
+            formulaMedica.RecetaMedica = recetaMedica;
+            return formulaMedica;
         }
 
         #endregion
 
         #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdCita
+        {
+            get
+            {
+                return _IdCita;
+            }
+            set
+            {
+                OnIdCitaChanging(value);
+                ReportPropertyChanging("IdCita");
+                _IdCita = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdCita");
+                OnIdCitaChanged();
+            }
+        }
+        private global::System.Int32 _IdCita;
+        partial void OnIdCitaChanging(global::System.Int32 value);
+        partial void OnIdCitaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -519,30 +485,6 @@ namespace Clinica_ASP
         private global::System.Int32 _IdFormulaMedica;
         partial void OnIdFormulaMedicaChanging(global::System.Int32 value);
         partial void OnIdFormulaMedicaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdCita
-        {
-            get
-            {
-                return _IdCita;
-            }
-            set
-            {
-                OnIdCitaChanging(value);
-                ReportPropertyChanging("IdCita");
-                _IdCita = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdCita");
-                OnIdCitaChanged();
-            }
-        }
-        private global::System.Int32 _IdCita;
-        partial void OnIdCitaChanging(global::System.Int32 value);
-        partial void OnIdCitaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -579,16 +521,16 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__1273C1CD", "Citas")]
-        public Citas Citas
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__0EA330E9", "Cita")]
+        public Cita Cita
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9", "Cita").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9", "Cita").Value = value;
             }
         }
         /// <summary>
@@ -596,17 +538,17 @@ namespace Clinica_ASP
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Citas> CitasReference
+        public EntityReference<Cita> CitaReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9", "Cita");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Citas>("ClinicaAspModel.FK__FormulaMe__IdCit__1273C1CD", "Citas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9", "Cita", value);
                 }
             }
         }
@@ -618,34 +560,26 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Medicos")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="TipoUsuario")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Medicos : EntityObject
+    public partial class TipoUsuario : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Medicos.
+        /// Crear un nuevo objeto TipoUsuario.
         /// </summary>
-        /// <param name="cedulaM">Valor inicial de la propiedad CedulaM.</param>
-        /// <param name="nombreM">Valor inicial de la propiedad NombreM.</param>
-        /// <param name="apellidoM">Valor inicial de la propiedad ApellidoM.</param>
-        /// <param name="emailM">Valor inicial de la propiedad EmailM.</param>
-        /// <param name="contrasena">Valor inicial de la propiedad contrasena.</param>
-        /// <param name="anionacimiento">Valor inicial de la propiedad anionacimiento.</param>
-        /// <param name="especialidad">Valor inicial de la propiedad Especialidad.</param>
-        public static Medicos CreateMedicos(global::System.Int32 cedulaM, global::System.String nombreM, global::System.String apellidoM, global::System.String emailM, global::System.String contrasena, global::System.DateTime anionacimiento, global::System.String especialidad)
+        /// <param name="idTipoUsuario">Valor inicial de la propiedad IdTipoUsuario.</param>
+        /// <param name="nombreTipoUsuario">Valor inicial de la propiedad NombreTipoUsuario.</param>
+        /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
+        public static TipoUsuario CreateTipoUsuario(global::System.Int32 idTipoUsuario, global::System.String nombreTipoUsuario, global::System.Int32 cedula)
         {
-            Medicos medicos = new Medicos();
-            medicos.CedulaM = cedulaM;
-            medicos.NombreM = nombreM;
-            medicos.ApellidoM = apellidoM;
-            medicos.EmailM = emailM;
-            medicos.contrasena = contrasena;
-            medicos.anionacimiento = anionacimiento;
-            medicos.Especialidad = especialidad;
-            return medicos;
+            TipoUsuario tipoUsuario = new TipoUsuario();
+            tipoUsuario.IdTipoUsuario = idTipoUsuario;
+            tipoUsuario.NombreTipoUsuario = nombreTipoUsuario;
+            tipoUsuario.Cedula = cedula;
+            return tipoUsuario;
         }
 
         #endregion
@@ -657,195 +591,75 @@ namespace Clinica_ASP
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 CedulaM
+        public global::System.Int32 IdTipoUsuario
         {
             get
             {
-                return _CedulaM;
+                return _IdTipoUsuario;
             }
             set
             {
-                if (_CedulaM != value)
+                if (_IdTipoUsuario != value)
                 {
-                    OnCedulaMChanging(value);
-                    ReportPropertyChanging("CedulaM");
-                    _CedulaM = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("CedulaM");
-                    OnCedulaMChanged();
+                    OnIdTipoUsuarioChanging(value);
+                    ReportPropertyChanging("IdTipoUsuario");
+                    _IdTipoUsuario = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdTipoUsuario");
+                    OnIdTipoUsuarioChanged();
                 }
             }
         }
-        private global::System.Int32 _CedulaM;
-        partial void OnCedulaMChanging(global::System.Int32 value);
-        partial void OnCedulaMChanged();
+        private global::System.Int32 _IdTipoUsuario;
+        partial void OnIdTipoUsuarioChanging(global::System.Int32 value);
+        partial void OnIdTipoUsuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String NombreM
+        public global::System.String NombreTipoUsuario
         {
             get
             {
-                return _NombreM;
+                return _NombreTipoUsuario;
             }
             set
             {
-                OnNombreMChanging(value);
-                ReportPropertyChanging("NombreM");
-                _NombreM = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("NombreM");
-                OnNombreMChanged();
+                OnNombreTipoUsuarioChanging(value);
+                ReportPropertyChanging("NombreTipoUsuario");
+                _NombreTipoUsuario = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NombreTipoUsuario");
+                OnNombreTipoUsuarioChanged();
             }
         }
-        private global::System.String _NombreM;
-        partial void OnNombreMChanging(global::System.String value);
-        partial void OnNombreMChanged();
+        private global::System.String _NombreTipoUsuario;
+        partial void OnNombreTipoUsuarioChanging(global::System.String value);
+        partial void OnNombreTipoUsuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String ApellidoM
+        public global::System.Int32 Cedula
         {
             get
             {
-                return _ApellidoM;
+                return _Cedula;
             }
             set
             {
-                OnApellidoMChanging(value);
-                ReportPropertyChanging("ApellidoM");
-                _ApellidoM = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("ApellidoM");
-                OnApellidoMChanged();
+                OnCedulaChanging(value);
+                ReportPropertyChanging("Cedula");
+                _Cedula = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cedula");
+                OnCedulaChanged();
             }
         }
-        private global::System.String _ApellidoM;
-        partial void OnApellidoMChanging(global::System.String value);
-        partial void OnApellidoMChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String EmailM
-        {
-            get
-            {
-                return _EmailM;
-            }
-            set
-            {
-                OnEmailMChanging(value);
-                ReportPropertyChanging("EmailM");
-                _EmailM = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("EmailM");
-                OnEmailMChanged();
-            }
-        }
-        private global::System.String _EmailM;
-        partial void OnEmailMChanging(global::System.String value);
-        partial void OnEmailMChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String contrasena
-        {
-            get
-            {
-                return _contrasena;
-            }
-            set
-            {
-                OncontrasenaChanging(value);
-                ReportPropertyChanging("contrasena");
-                _contrasena = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("contrasena");
-                OncontrasenaChanged();
-            }
-        }
-        private global::System.String _contrasena;
-        partial void OncontrasenaChanging(global::System.String value);
-        partial void OncontrasenaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime anionacimiento
-        {
-            get
-            {
-                return _anionacimiento;
-            }
-            set
-            {
-                OnanionacimientoChanging(value);
-                ReportPropertyChanging("anionacimiento");
-                _anionacimiento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("anionacimiento");
-                OnanionacimientoChanged();
-            }
-        }
-        private global::System.DateTime _anionacimiento;
-        partial void OnanionacimientoChanging(global::System.DateTime value);
-        partial void OnanionacimientoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> telefono
-        {
-            get
-            {
-                return _telefono;
-            }
-            set
-            {
-                OntelefonoChanging(value);
-                ReportPropertyChanging("telefono");
-                _telefono = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("telefono");
-                OntelefonoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _telefono;
-        partial void OntelefonoChanging(Nullable<global::System.Int32> value);
-        partial void OntelefonoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Especialidad
-        {
-            get
-            {
-                return _Especialidad;
-            }
-            set
-            {
-                OnEspecialidadChanging(value);
-                ReportPropertyChanging("Especialidad");
-                _Especialidad = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Especialidad");
-                OnEspecialidadChanged();
-            }
-        }
-        private global::System.String _Especialidad;
-        partial void OnEspecialidadChanging(global::System.String value);
-        partial void OnEspecialidadChanged();
+        private global::System.Int32 _Cedula;
+        partial void OnCedulaChanging(global::System.Int32 value);
+        partial void OnCedulaChanged();
 
         #endregion
 
@@ -858,18 +672,34 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaM__0DAF0CB0", "Citas")]
-        public EntityCollection<Citas> Citas
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__TipoUsuar__Cedul__0519C6AF", "Usuario")]
+        public Usuario Usuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Citas");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> UsuarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "Usuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaM__0DAF0CB0", "Citas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "Usuario", value);
                 }
             }
         }
@@ -881,32 +711,34 @@ namespace Clinica_ASP
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Pacientes")]
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaAspModel", Name="Usuario")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Pacientes : EntityObject
+    public partial class Usuario : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Pacientes.
+        /// Crear un nuevo objeto Usuario.
         /// </summary>
-        /// <param name="cedulaPaciente">Valor inicial de la propiedad CedulaPaciente.</param>
-        /// <param name="nombrePaciente">Valor inicial de la propiedad NombrePaciente.</param>
-        /// <param name="apellidoPaciente">Valor inicial de la propiedad ApellidoPaciente.</param>
+        /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
+        /// <param name="nombreUsuario">Valor inicial de la propiedad NombreUsuario.</param>
+        /// <param name="apellidoUsuario">Valor inicial de la propiedad ApellidoUsuario.</param>
         /// <param name="email">Valor inicial de la propiedad Email.</param>
-        /// <param name="contrasena">Valor inicial de la propiedad contrasena.</param>
+        /// <param name="contrasena">Valor inicial de la propiedad Contrasena.</param>
         /// <param name="anionacimiento">Valor inicial de la propiedad anionacimiento.</param>
-        public static Pacientes CreatePacientes(global::System.Int32 cedulaPaciente, global::System.String nombrePaciente, global::System.String apellidoPaciente, global::System.String email, global::System.String contrasena, global::System.DateTime anionacimiento)
+        /// <param name="telefono">Valor inicial de la propiedad telefono.</param>
+        public static Usuario CreateUsuario(global::System.Int32 cedula, global::System.String nombreUsuario, global::System.String apellidoUsuario, global::System.String email, global::System.String contrasena, global::System.DateTime anionacimiento, global::System.Int32 telefono)
         {
-            Pacientes pacientes = new Pacientes();
-            pacientes.CedulaPaciente = cedulaPaciente;
-            pacientes.NombrePaciente = nombrePaciente;
-            pacientes.ApellidoPaciente = apellidoPaciente;
-            pacientes.Email = email;
-            pacientes.contrasena = contrasena;
-            pacientes.anionacimiento = anionacimiento;
-            return pacientes;
+            Usuario usuario = new Usuario();
+            usuario.Cedula = cedula;
+            usuario.NombreUsuario = nombreUsuario;
+            usuario.ApellidoUsuario = apellidoUsuario;
+            usuario.Email = email;
+            usuario.Contrasena = contrasena;
+            usuario.anionacimiento = anionacimiento;
+            usuario.telefono = telefono;
+            return usuario;
         }
 
         #endregion
@@ -918,75 +750,75 @@ namespace Clinica_ASP
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 CedulaPaciente
+        public global::System.Int32 Cedula
         {
             get
             {
-                return _CedulaPaciente;
+                return _Cedula;
             }
             set
             {
-                if (_CedulaPaciente != value)
+                if (_Cedula != value)
                 {
-                    OnCedulaPacienteChanging(value);
-                    ReportPropertyChanging("CedulaPaciente");
-                    _CedulaPaciente = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("CedulaPaciente");
-                    OnCedulaPacienteChanged();
+                    OnCedulaChanging(value);
+                    ReportPropertyChanging("Cedula");
+                    _Cedula = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Cedula");
+                    OnCedulaChanged();
                 }
             }
         }
-        private global::System.Int32 _CedulaPaciente;
-        partial void OnCedulaPacienteChanging(global::System.Int32 value);
-        partial void OnCedulaPacienteChanged();
+        private global::System.Int32 _Cedula;
+        partial void OnCedulaChanging(global::System.Int32 value);
+        partial void OnCedulaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String NombrePaciente
+        public global::System.String NombreUsuario
         {
             get
             {
-                return _NombrePaciente;
+                return _NombreUsuario;
             }
             set
             {
-                OnNombrePacienteChanging(value);
-                ReportPropertyChanging("NombrePaciente");
-                _NombrePaciente = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("NombrePaciente");
-                OnNombrePacienteChanged();
+                OnNombreUsuarioChanging(value);
+                ReportPropertyChanging("NombreUsuario");
+                _NombreUsuario = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NombreUsuario");
+                OnNombreUsuarioChanged();
             }
         }
-        private global::System.String _NombrePaciente;
-        partial void OnNombrePacienteChanging(global::System.String value);
-        partial void OnNombrePacienteChanged();
+        private global::System.String _NombreUsuario;
+        partial void OnNombreUsuarioChanging(global::System.String value);
+        partial void OnNombreUsuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String ApellidoPaciente
+        public global::System.String ApellidoUsuario
         {
             get
             {
-                return _ApellidoPaciente;
+                return _ApellidoUsuario;
             }
             set
             {
-                OnApellidoPacienteChanging(value);
-                ReportPropertyChanging("ApellidoPaciente");
-                _ApellidoPaciente = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("ApellidoPaciente");
-                OnApellidoPacienteChanged();
+                OnApellidoUsuarioChanging(value);
+                ReportPropertyChanging("ApellidoUsuario");
+                _ApellidoUsuario = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ApellidoUsuario");
+                OnApellidoUsuarioChanged();
             }
         }
-        private global::System.String _ApellidoPaciente;
-        partial void OnApellidoPacienteChanging(global::System.String value);
-        partial void OnApellidoPacienteChanged();
+        private global::System.String _ApellidoUsuario;
+        partial void OnApellidoUsuarioChanging(global::System.String value);
+        partial void OnApellidoUsuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -1017,24 +849,24 @@ namespace Clinica_ASP
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String contrasena
+        public global::System.String Contrasena
         {
             get
             {
-                return _contrasena;
+                return _Contrasena;
             }
             set
             {
-                OncontrasenaChanging(value);
-                ReportPropertyChanging("contrasena");
-                _contrasena = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("contrasena");
-                OncontrasenaChanged();
+                OnContrasenaChanging(value);
+                ReportPropertyChanging("Contrasena");
+                _Contrasena = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Contrasena");
+                OnContrasenaChanged();
             }
         }
-        private global::System.String _contrasena;
-        partial void OncontrasenaChanging(global::System.String value);
-        partial void OncontrasenaChanged();
+        private global::System.String _Contrasena;
+        partial void OnContrasenaChanging(global::System.String value);
+        partial void OnContrasenaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -1063,9 +895,9 @@ namespace Clinica_ASP
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> telefono
+        public global::System.Int32 telefono
         {
             get
             {
@@ -1080,8 +912,8 @@ namespace Clinica_ASP
                 OntelefonoChanged();
             }
         }
-        private Nullable<global::System.Int32> _telefono;
-        partial void OntelefonoChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _telefono;
+        partial void OntelefonoChanging(global::System.Int32 value);
         partial void OntelefonoChanged();
 
         #endregion
@@ -1095,18 +927,40 @@ namespace Clinica_ASP
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__CedulaPaci__0CBAE877", "Citas")]
-        public EntityCollection<Citas> Citas
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__Cita__Cedula__09DE7BCC", "Cita")]
+        public EntityCollection<Cita> Cita
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Citas");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cita>("ClinicaAspModel.FK__Cita__Cedula__09DE7BCC", "Cita");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Citas>("ClinicaAspModel.FK__Cita__CedulaPaci__0CBAE877", "Citas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaAspModel.FK__Cita__Cedula__09DE7BCC", "Cita", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario")]
+        public EntityCollection<TipoUsuario> TipoUsuario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario", value);
                 }
             }
         }

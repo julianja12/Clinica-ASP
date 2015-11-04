@@ -54,6 +54,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministacionUsuarios.aspx" />
     <Content Include="AdministracionCitas.aspx" />
     <Content Include="ClinicaBD.edmx.sql" />
     <Content Include="Contactenos.aspx" />
@@ -82,6 +83,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministacionUsuarios.aspx.cs">
+      <DependentUpon>AdministacionUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministacionUsuarios.aspx.designer.cs">
+      <DependentUpon>AdministacionUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdministracionCitas.aspx.cs">
       <DependentUpon>AdministracionCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,6 +97,7 @@
     <Compile Include="AdministracionCitas.aspx.designer.cs">
       <DependentUpon>AdministracionCitas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CitaPaciente.cs" />
     <Compile Include="ClinicaBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
