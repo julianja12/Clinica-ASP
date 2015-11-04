@@ -38,13 +38,15 @@
                     SortExpression="telefono" />
             </Columns>
         </asp:GridView>
-   
-    <h3>&nbsp;</h3>
-         <h3>Asignacion de Permisos</h3>
+         </div>
+         <h4>Asignacion de Permisos</h4>
         <p>&nbsp;</p>
 
     <asp:Label ID="Label3" runat="server" Text="Cedula Usuario:"></asp:Label>
 &nbsp;<asp:TextBox ID="txtCedula" runat="server"></asp:TextBox>
+         <asp:RegularExpressionValidator ID="RegularExpressionV" runat="server" 
+             ErrorMessage="Debe Ingresar  su Cedula" ForeColor="Red" 
+             ValidationExpression="^[0-9]*$" ControlToValidate="txtCedula"></asp:RegularExpressionValidator>
     <asp:Label ID="Label2" runat="server" Text="Tipo de Usuario"></asp:Label>
 &nbsp;
     <asp:DropDownList ID="ddlTipo" runat="server">
@@ -56,7 +58,7 @@
     <asp:Button ID="btnRol" runat="server" CssClass="btn btn-primary" 
         onclick="btnRol_Click" Text="Asignar Rol" />
     </p>
-    </div>
+   
     <p>
         <asp:EntityDataSource ID="EntityDataSource1" runat="server" 
             ConnectionString="name=ClinicaAspEntities" 

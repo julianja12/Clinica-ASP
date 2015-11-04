@@ -21,7 +21,7 @@ using System.Xml.Serialization;
 
 [assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__Cedula__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Cita), true)]
 [assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__0EA330E9", "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Cita), "FormulaMedica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.FormulaMedica), true)]
-[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__TipoUsuar__Cedul__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.TipoUsuario), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__TipoUsuar__Cedul__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.TipoUsuario), true)]
 
 #endregion
 
@@ -589,7 +589,7 @@ namespace Clinica_ASP
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 IdTipoUsuario
         {
@@ -599,14 +599,11 @@ namespace Clinica_ASP
             }
             set
             {
-                if (_IdTipoUsuario != value)
-                {
-                    OnIdTipoUsuarioChanging(value);
-                    ReportPropertyChanging("IdTipoUsuario");
-                    _IdTipoUsuario = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTipoUsuario");
-                    OnIdTipoUsuarioChanged();
-                }
+                OnIdTipoUsuarioChanging(value);
+                ReportPropertyChanging("IdTipoUsuario");
+                _IdTipoUsuario = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdTipoUsuario");
+                OnIdTipoUsuarioChanged();
             }
         }
         private global::System.Int32 _IdTipoUsuario;
@@ -640,7 +637,7 @@ namespace Clinica_ASP
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 Cedula
         {
@@ -650,11 +647,14 @@ namespace Clinica_ASP
             }
             set
             {
-                OnCedulaChanging(value);
-                ReportPropertyChanging("Cedula");
-                _Cedula = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Cedula");
-                OnCedulaChanged();
+                if (_Cedula != value)
+                {
+                    OnCedulaChanging(value);
+                    ReportPropertyChanging("Cedula");
+                    _Cedula = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Cedula");
+                    OnCedulaChanged();
+                }
             }
         }
         private global::System.Int32 _Cedula;
@@ -950,17 +950,33 @@ namespace Clinica_ASP
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario")]
-        public EntityCollection<TipoUsuario> TipoUsuario
+        public TipoUsuario TipoUsuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TipoUsuario> TipoUsuarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TipoUsuario>("ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF", "TipoUsuario", value);
                 }
             }
         }

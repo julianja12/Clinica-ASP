@@ -12,7 +12,7 @@
                 <div class="row">
 
                         <h4 id="H3">Fecha Cita:</h4>
-				            <input type="text" id="DateFecha" runat="server" class="form-control input-lg" step="1" min="1890-01-01" max="2015-11-12" tabindex="6" required/>
+				            <input type="text" id="DateFecha" runat="server" class="form-control input-lg" step="1" min="2015-11-12" max="2015-12-31" tabindex="6" required/>
                         </div>
 			 
                 <div class="row">

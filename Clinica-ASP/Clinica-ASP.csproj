@@ -56,6 +56,7 @@
   <ItemGroup>
     <Content Include="AdministacionUsuarios.aspx" />
     <Content Include="AdministracionCitas.aspx" />
+    <Content Include="AdministracionFormulaMedica.aspx" />
     <Content Include="ClinicaBD.edmx.sql" />
     <Content Include="Contactenos.aspx" />
     <Content Include="Estilos\bootstrap-theme.css" />
@@ -97,6 +98,14 @@
     <Compile Include="AdministracionCitas.aspx.designer.cs">
       <DependentUpon>AdministracionCitas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdministracionFormulaMedica.aspx.cs">
+      <DependentUpon>AdministracionFormulaMedica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionFormulaMedica.aspx.designer.cs">
+      <DependentUpon>AdministracionFormulaMedica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitaHistoria.cs" />
     <Compile Include="CitaPaciente.cs" />
     <Compile Include="ClinicaBD.Designer.cs">
       <AutoGen>True</AutoGen>

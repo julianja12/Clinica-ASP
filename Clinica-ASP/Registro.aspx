@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<form runat="server">
+    <form runat="server">
     <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -17,7 +17,9 @@
 				    <div class="col-xs-12 col-sm-6 col-md-6">
 					    <div class="form-group">
 						    <input type="text" runat="server" id="txtApellidos" class="form-control input-lg" placeholder="Apellidos" tabindex="2" required/>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidatorApellidos" runat="server" ErrorMessage="Ingrese tus Apellidos" ForeColor="Red" ControlToValidate="txtApellidos" ValidationExpression="^[a-zA-z]+[(?<=\d\s]([a-zA-Z]+\s)*[a-zA-Z]+$"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidatorApellidos" 
+                                runat="server" ErrorMessage="Ingrese tus Apellidos" ForeColor="Red" 
+                                ControlToValidate="txtApellidos" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
 					    </div>
 				    </div>
 			    </div>

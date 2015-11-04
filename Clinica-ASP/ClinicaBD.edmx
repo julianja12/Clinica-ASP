@@ -43,7 +43,7 @@
   </EntityType>
   <EntityType Name="TipoUsuario">
     <Key>
-      <PropertyRef Name="IdTipoUsuario" />
+      <PropertyRef Name="Cedula" />
     </Key>
     <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
     <Property Name="NombreTipoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
@@ -87,7 +87,7 @@
   </Association>
   <Association Name="FK__TipoUsuar__Cedul__0519C6AF">
     <End Role="Usuario" Type="ClinicaAspModel.Store.Usuario" Multiplicity="1" />
-    <End Role="TipoUsuario" Type="ClinicaAspModel.Store.TipoUsuario" Multiplicity="*" />
+    <End Role="TipoUsuario" Type="ClinicaAspModel.Store.TipoUsuario" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
         <PropertyRef Name="Cedula" />
@@ -142,7 +142,7 @@
         </EntityType>
         <EntityType Name="TipoUsuario">
           <Key>
-            <PropertyRef Name="IdTipoUsuario" />
+            <PropertyRef Name="Cedula" />
           </Key>
           <Property Type="Int32" Name="IdTipoUsuario" Nullable="false" />
           <Property Type="String" Name="NombreTipoUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -189,7 +189,7 @@
         </Association>
         <Association Name="FK__TipoUsuar__Cedul__0519C6AF">
           <End Type="ClinicaAspModel.Usuario" Role="Usuario" Multiplicity="1" />
-          <End Type="ClinicaAspModel.TipoUsuario" Role="TipoUsuario" Multiplicity="*" />
+          <End Type="ClinicaAspModel.TipoUsuario" Role="TipoUsuario" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
               <PropertyRef Name="Cedula" />
@@ -228,9 +228,9 @@
     <EntitySetMapping Name="TipoUsuario">
       <EntityTypeMapping TypeName="IsTypeOf(ClinicaAspModel.TipoUsuario)">
         <MappingFragment StoreEntitySet="TipoUsuario">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
           <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
           <ScalarProperty Name="NombreTipoUsuario" ColumnName="NombreTipoUsuario" />
-          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -267,21 +267,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ClinicaBD">
-        <EntityTypeShape EntityType="ClinicaAspModel.Cita" Width="1.5" PointX="3" PointY="1.125" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="ClinicaAspModel.FormulaMedica" Width="1.5" PointX="5.25" PointY="1.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ClinicaAspModel.Cita" Width="1.5" PointX="3" PointY="1.125" Height="2.3648893229166656" />
+        <EntityTypeShape EntityType="ClinicaAspModel.FormulaMedica" Width="1.5" PointX="5.25" PointY="1.375" Height="1.7879850260416665" />
         <EntityTypeShape EntityType="ClinicaAspModel.TipoUsuario" Width="1.5" PointX="3" PointY="4.125" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ClinicaAspModel.Usuario" Width="1.5" PointX="0.75" PointY="2.125" Height="2.749492187499996" />
+        <EntityTypeShape EntityType="ClinicaAspModel.Usuario" Width="1.5" PointX="0.75" PointY="2.125" Height="2.7494921874999996" />
         <AssociationConnector Association="ClinicaAspModel.FK__Cita__Cedula__09DE7BCC" >
-          <ConnectorPoint PointX="2.25" PointY="2.8074446614583337" />
-          <ConnectorPoint PointX="3" PointY="2.8074446614583337" />
+          <ConnectorPoint PointX="2.25" PointY="2.8074446614583328" />
+          <ConnectorPoint PointX="3" PointY="2.8074446614583328" />
         </AssociationConnector>
         <AssociationConnector Association="ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9" >
-          <ConnectorPoint PointX="4.5" PointY="2.2689925130208337" />
-          <ConnectorPoint PointX="5.25" PointY="2.2689925130208337" />
+          <ConnectorPoint PointX="4.5" PointY="2.2689925130208333" />
+          <ConnectorPoint PointX="5.25" PointY="2.2689925130208333" />
         </AssociationConnector>
         <AssociationConnector Association="ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF" >
-          <ConnectorPoint PointX="2.25" PointY="4.499746093749998" />
-          <ConnectorPoint PointX="3" PointY="4.499746093749998" />
+          <ConnectorPoint PointX="2.25" PointY="4.49974609375" />
+          <ConnectorPoint PointX="3" PointY="4.49974609375" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 11/04/2015 14:03:48
+-- Date Created: 11/04/2015 18:19:39
 -- Generated from EDMX file: C:\Users\JulianJa\Documents\Semillero de Pronfudizacion\Clinica-ASP\Clinica-ASP\ClinicaBD.edmx
 -- --------------------------------------------------
 
@@ -102,10 +102,10 @@ ADD CONSTRAINT [PK_FormulaMedica]
     PRIMARY KEY CLUSTERED ([IdFormulaMedica] ASC);
 GO
 
--- Creating primary key on [IdTipoUsuario] in table 'TipoUsuario'
+-- Creating primary key on [Cedula] in table 'TipoUsuario'
 ALTER TABLE [dbo].[TipoUsuario]
 ADD CONSTRAINT [PK_TipoUsuario]
-    PRIMARY KEY CLUSTERED ([IdTipoUsuario] ASC);
+    PRIMARY KEY CLUSTERED ([Cedula] ASC);
 GO
 
 -- Creating primary key on [Cedula] in table 'Usuario'
@@ -153,11 +153,6 @@ ADD CONSTRAINT [FK__TipoUsuar__Cedul__0519C6AF]
     REFERENCES [dbo].[Usuario]
         ([Cedula])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK__TipoUsuar__Cedul__0519C6AF'
-CREATE INDEX [IX_FK__TipoUsuar__Cedul__0519C6AF]
-ON [dbo].[TipoUsuario]
-    ([Cedula]);
 GO
 
 -- --------------------------------------------------
