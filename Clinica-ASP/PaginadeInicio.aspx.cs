@@ -53,6 +53,7 @@ namespace Clinica_ASP
                 Session["user"] = queryUsuario;
                 Session["cedula"] = cedula;
                 Session["tipoUsuario"] = IdTipo;
+                Session["correo"] = txtEmail.Value;
 
                 Response.Redirect("PaginadeInicio.aspx");
 

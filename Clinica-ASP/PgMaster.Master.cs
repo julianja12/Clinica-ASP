@@ -51,6 +51,7 @@ namespace Clinica_ASP
             Session["cedula"] = null;
             Session["user"] = null;
             Session["tipousuario"] = null;
+            Session["correo"] = null;
             UsuarioL.Visible = false;
             RegistroL.Visible = true;
             AdminUser.Visible = false;

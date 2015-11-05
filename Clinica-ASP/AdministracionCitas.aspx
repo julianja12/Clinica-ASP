@@ -18,7 +18,7 @@
                 <div class="row">
                  <h4 id="H1">Hora de Cita:</h4>
                  <input type="text" runat="server" name="hora" id="txtHoraC" value="06:45:00" max="19:45:00" min="06:45:00" 
-                    step="1" class="form-control" />
+                    step="10" class="form-control" />
 				</div>	   
 	   
 
@@ -56,7 +56,7 @@ required/><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server
                     &nbsp;&nbsp;&nbsp;&nbsp;
 
                     &nbsp;
-                     <asp:Button class="btn btn-danger" tabindex="10" ID="btnCancelar" runat="server" 
+                     <asp:Button class="btn btn-danger" tabindex="11" ID="btnCancelar" runat="server" 
                             Text="Cancelar Cita" CausesValidation="False" formnovalidate 
                             onclick="btnCancelar_Click"/>
 
