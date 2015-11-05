@@ -11,12 +11,9 @@ namespace Clinica_ASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Session["user"] == null)
+            if (Session["cedula"] == null)
             {
-
                 Response.Redirect("Principal.aspx");
-
             }
         }
 
@@ -24,23 +21,38 @@ namespace Clinica_ASP
         {
             using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
             {
-                TipoUsuario NuevoRol = new TipoUsuario();
 
-                NuevoRol.Cedula = Convert.ToInt32(txtCedula.Text);
-                NuevoRol.IdTipoUsuario = Convert.ToInt32(ddlTipo.SelectedValue);
-                NuevoRol.NombreTipoUsuario = ddlTipo.SelectedItem.Text;
+                int cedulaIngresada = Convert.ToInt32(txtCedula.Text);
+                var cedula = (from u in oConexion.TipoUsuario
+                            where u.Cedula == cedulaIngresada
+                            select u).FirstOrDefault();
 
-
-                oConexion.TipoUsuario.AddObject(NuevoRol);
-                oConexion.SaveChanges();
-                bool n = true;
-
-                if (n == true)
+                if (cedula != null)
                 {
+                    cedula.IdTipoUsuario = Convert.ToInt32(ddlTipo.SelectedValue);
+                    cedula.NombreTipoUsuario = ddlTipo.SelectedItem.Text;
                     txtCedula.Text = "";
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Asigno el Rol Correctamente')</script>");
+                    oConexion.SaveChanges();
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se cambio el Rol Correctamente')</script>");
                 }
+                else
+                {
+                    TipoUsuario NuevoRol = new TipoUsuario();
 
+                    NuevoRol.Cedula = cedulaIngresada;
+                    NuevoRol.IdTipoUsuario = Convert.ToInt32(ddlTipo.SelectedValue);
+                    NuevoRol.NombreTipoUsuario = ddlTipo.SelectedItem.Text;
+
+                    oConexion.TipoUsuario.AddObject(NuevoRol);
+                    oConexion.SaveChanges();
+                    bool n = true;
+
+                    if (n == true)
+                    {
+                        txtCedula.Text = "";
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('Se Asigno el Rol Correctamente')</script>");
+                    }
+                }
             }
         }
     }

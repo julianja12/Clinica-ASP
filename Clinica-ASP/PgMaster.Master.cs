@@ -13,17 +13,35 @@ namespace Clinica_ASP
         {
             if (Session["cedula"] != null)
             {
-                UsuarioL.Visible = true;
                 RegistroL.Visible = false;
-                MenuCitas.Visible = true;
-                AdminUser.Visible = true; //temporalmente
+                UsuarioL.Visible = true;
+
+                if (Session["tipoUsuario"].ToString()=="1")
+                {
+                    AdminUser.Visible = true;
+                    AdminFormula.Visible = false;
+                    MenuCitas.Visible = false;  
+                }
+                else if (Session["tipoUsuario"].ToString()=="2")
+                {
+                    AdminUser.Visible = false;
+                    AdminFormula.Visible = true;
+                    MenuCitas.Visible = false;
+                }
+                else
+                {
+                    AdminUser.Visible = false;
+                    AdminFormula.Visible = false;
+                    MenuCitas.Visible = true;
+                }
             }
             else
             {
                 UsuarioL.Visible = false;
                 RegistroL.Visible = true;
                 MenuCitas.Visible = false;
-                AdminUser.Visible = false; //temporalmente
+                AdminUser.Visible = false;
+                AdminFormula.Visible = false;
             }
             
         }
@@ -31,10 +49,13 @@ namespace Clinica_ASP
         protected void CerrarSesionAction_Click(object sender, EventArgs e)
         {
             Session["cedula"] = null;
-            Session["nombre"] = null;
+            Session["user"] = null;
             Session["tipousuario"] = null;
             UsuarioL.Visible = false;
             RegistroL.Visible = true;
+            AdminUser.Visible = false;
+            AdminFormula.Visible = false;
+            MenuCitas.Visible = false;
             Session.Clear();
             Response.Redirect("PaginadeInicio.aspx");
         }

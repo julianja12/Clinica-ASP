@@ -22,7 +22,7 @@ namespace Clinica_ASP
             }
             else
             {
-                Session["nombre"] = null;
+                Session["user"] = null;
                 loginUsuarios.Visible = true;
             }
         }
@@ -38,44 +38,29 @@ namespace Clinica_ASP
                                     where n.Email == email && n.Contrasena == pass
                                     select n.NombreUsuario).FirstOrDefault();
 
-
-            int cedula = (from c in db.Usuario
-                          where c.Email == email && c.Contrasena == pass
-                          select c.Cedula).FirstOrDefault();
-
-
-            int IdTipo = (from t in db.TipoUsuario
-                          where t.Cedula == cedula
-                          select t.IdTipoUsuario).FirstOrDefault();
-
             if (queryUsuario != null)
             {
-                if (IdTipo == 1)
-                {
-                    Session["user"] = queryUsuario;
-                    Response.Redirect("AdministacionUsuarios.aspx");
 
-                }
-                else if (IdTipo == 2)
-                {
+                int cedula = (from c in db.Usuario
+                              where c.Email == email && c.Contrasena == pass
+                              select c.Cedula).FirstOrDefault();
 
-                    Session["user"] = queryUsuario;
-                    Response.Redirect("PaginadeInicio.aspx");
-                }
 
-                else if (IdTipo == 3)
-                {
+                int IdTipo = (from t in db.TipoUsuario
+                              where t.Cedula == cedula
+                              select t.IdTipoUsuario).FirstOrDefault();
 
-                    Session["user"] = queryUsuario;
-                    Session["cedula"] = cedula;
-                    Response.Redirect("AdministracionCitas.aspx");
-                }
+                Session["user"] = queryUsuario;
+                Session["cedula"] = cedula;
+                Session["tipoUsuario"] = IdTipo;
+
+                Response.Redirect("PaginadeInicio.aspx");
+
             }
-                
-                else
-                {
-                    lblMensaje.Text = "Usuario o Contraseña Incorrecto";
-                }
+            else
+            {
+                lblMensaje.Text = "Usuario o Contraseña Incorrecto";
+            }
         }
 
         public static string EncriptacionMD5(string Pass)
