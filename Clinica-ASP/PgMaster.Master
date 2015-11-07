@@ -27,6 +27,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="AdministracionCitas.aspx" runat="server" id="MenuCitas" >Citas</a></li>
                     <li id="AdminUser" runat="server"><a href="AdministacionUsuarios.aspx">Usuarios</a></li>
+                    <li id="ReportesL" runat="server"><a href="ReportesHistoriaClinica.aspx">Reportes</a></li>
                     <li id="AdminFormula" runat="server"><a href="AdministracionFormulaMedica.aspx">Historia Clinica</a></li>
                     <li><a href="Contactenos.aspx">Contáctenos</a></li>
                     <li id="RegistroL" runat="server"><a href="Registro.aspx">Registrarse</a></li>

@@ -36,7 +36,7 @@ namespace Clinica_ASP
                 string Correo = Session["correo"].ToString();
                 string NombreUsuario = Session["user"].ToString();
 
-                MensajeAsignacionCita(Correo, NombreUsuario, DateFecha.Value, txtHoraC.Value);
+                //MensajeAsignacionCita(Correo, NombreUsuario, DateFecha.Value, txtHoraC.Value);
 
                 bool n = true;
 
@@ -89,7 +89,7 @@ namespace Clinica_ASP
                 string Correo = Session["correo"].ToString();
                 string NombreUsuario = Session["user"].ToString();
 
-                MensajeCancelacionCita(Correo, NombreUsuario);
+                //MensajeCancelacionCita(Correo, NombreUsuario);
 
                 bool ee = true;
 
@@ -121,43 +121,43 @@ namespace Clinica_ASP
             }
         }
 
-        public void MensajeAsignacionCita(string CorreoUsuario, string NombreUsuario, string Fecha, string Hora)
-        {
-            string mensaje = "Estimado usuario: "+NombreUsuario + "\n" +  Environment.NewLine + "Te recordamos que se ha realizado una solicitud de cita medica para el " +  Environment.NewLine
-                              + Fecha + " a las " + Hora + Environment.NewLine + "Cordial Saludo," + Environment.NewLine + Environment.NewLine + "Portal Salud Web";
+        //public void MensajeAsignacionCita(string CorreoUsuario, string NombreUsuario, string Fecha, string Hora)
+        //{
+        //    string mensaje = "Estimado usuario: "+NombreUsuario + "\n" +  Environment.NewLine + "Te recordamos que se ha realizado una solicitud de cita medica para el " +  Environment.NewLine
+        //                      + Fecha + " a las " + Hora + Environment.NewLine + "Cordial Saludo," + Environment.NewLine + Environment.NewLine + "Portal Salud Web";
  
-            MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
-            mail.Subject = "Notificación Fecha de la Cita";
-            mail.Body = mensaje;
-            mail.To.Add(CorreoUsuario);
+        //    MailMessage mail = new MailMessage();
+        //    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+        //    mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
+        //    mail.Subject = "Notificación Fecha de la Cita";
+        //    mail.Body = mensaje;
+        //    mail.To.Add(CorreoUsuario);
 
-            SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
+        //    SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
 
-            SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
-            SmtpServer.EnableSsl = true;
-            SmtpServer.Send(mail);
-        }
+        //    SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
+        //    SmtpServer.EnableSsl = true;
+        //    SmtpServer.Send(mail);
+        //}
 
-        public void MensajeCancelacionCita(string CorreoUsuario, string NombreUsuario)
-        {
-            string mensaje = "Estimado usuario: " + NombreUsuario + "\n" + Environment.NewLine + "Te recordamos que has cancelado la cita medica que tenias agendado con nosotros" + Environment.NewLine
-                              + Environment.NewLine + "Cordial Saludo," + Environment.NewLine + Environment.NewLine + "Portal Salud Web";
+        //public void MensajeCancelacionCita(string CorreoUsuario, string NombreUsuario)
+        //{
+        //    string mensaje = "Estimado usuario: " + NombreUsuario + "\n" + Environment.NewLine + "Te recordamos que has cancelado la cita medica que tenias agendado con nosotros" + Environment.NewLine
+        //                      + Environment.NewLine + "Cordial Saludo," + Environment.NewLine + Environment.NewLine + "Portal Salud Web";
 
-            MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
-            mail.Subject = "Notificación cancelación de la Cita";
-            mail.Body = mensaje;
-            mail.To.Add(CorreoUsuario);
+        //    MailMessage mail = new MailMessage();
+        //    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+        //    mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
+        //    mail.Subject = "Notificación cancelación de la Cita";
+        //    mail.Body = mensaje;
+        //    mail.To.Add(CorreoUsuario);
 
-            SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
+        //    SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
 
-            SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
-            SmtpServer.EnableSsl = true;
-            SmtpServer.Send(mail);
-        }
+        //    SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
+        //    SmtpServer.EnableSsl = true;
+        //    SmtpServer.Send(mail);
+        //}
        
     }
 }

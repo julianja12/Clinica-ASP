@@ -20,19 +20,22 @@ namespace Clinica_ASP
                 {
                     AdminUser.Visible = true;
                     AdminFormula.Visible = false;
-                    MenuCitas.Visible = false;  
+                    MenuCitas.Visible = false;
+                    ReportesL.Visible = true;
                 }
                 else if (Session["tipoUsuario"].ToString()=="2")
                 {
                     AdminUser.Visible = false;
                     AdminFormula.Visible = true;
                     MenuCitas.Visible = false;
+                    ReportesL.Visible = false;
                 }
                 else
                 {
                     AdminUser.Visible = false;
                     AdminFormula.Visible = false;
                     MenuCitas.Visible = true;
+                    ReportesL.Visible = false;
                 }
             }
             else
