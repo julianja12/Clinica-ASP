@@ -82,8 +82,6 @@ namespace Clinica_ASP
                     oConexion.SaveChanges();
                 }
             }
-
-            
         }
 
         protected void BtnCancelar_Click(object sender, EventArgs e)
@@ -107,15 +105,15 @@ namespace Clinica_ASP
             string mensaje = NombreUsuario + "\n"+"\n" + "Gracias por registrarse en Portal Salud Web" + "\n" + "De click al siguiente enlace para ingresar a la pagina " + "http://localhost:48314/PaginadeInicio.aspx"; 
   
             MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
+            SmtpClient SmtpServer = new SmtpClient("smtp.live.com"); //Para gmail usar: smtp.gmail.com
+            mail.From = new MailAddress("PortalWebAd@hotmail.com", "Portal Salud Web", Encoding.UTF8); //Correo de gmail: contactosclinicaweb@gmail.com
             mail.Subject = "Gracias por registrarse en Portal Salud Web";
             mail.Body = mensaje;
             mail.To.Add(CorreoUsuario);
 
-            SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
+            SmtpServer.Port = 587; //Puerto para Gmail, Yahoo, Hotmail...
 
-            SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("PortalWebAd@hotmail.com", "Webclinica123+"); //Pass gmail: contactos2030
             SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
         }

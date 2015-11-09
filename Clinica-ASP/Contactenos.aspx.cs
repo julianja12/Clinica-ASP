@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 using System.Net.Mail;
 using System.IO;
 using System.Text;
+using System.Net;
+using System.Runtime.InteropServices;
+
+
 
 namespace Funlam_2015_02_Clinica_Web
 {
@@ -19,53 +23,82 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
+           bool enableSSL = true;
+           //try
+           //{
+           //    txtMensaje.Text = "Nombre: " + txtNombre.Text + "\n" + "Correo de Contacto: " +txtCorreoE.Text + "\n" + "Mensaje: " + txtMensaje.Text;
+
+           //     //Configuración del Mensaje
+           //     MailMessage mail = new MailMessage();
+           //     SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+           //     //Especificamos el correo desde el que se enviará el Email y el nombre de la persona que lo envía
+           //     mail.From = new MailAddress("contactosclinicaweb@gmail.com", txtAsunto.Text, Encoding.UTF8);
+           //     //Aquí ponemos el asunto del correo
+           //     mail.Subject = txtAsunto.Text;
+           //     //Aquí ponemos el mensaje que incluirá el correo
+           //     mail.Body = txtMensaje.Text;
+           //     //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
+           //     mail.To.Add("clinicawebcorreo@gmail.com");
+           //     //Se le enviara una copia del mensaje al correo del usuario si escribio su correo en su respectivo campo.
+           //     if (txtCorreoE.Text!=string.Empty)
+           //     {
+           //         mail.CC.Add(txtCorreoE.Text);
+           //     }
+           //     //Si queremos enviar archivos adjuntos tenemos que especificar la ruta en donde se encuentran
+           //     //mail.Attachments.Add(new Attachment(@"C:\Documentos\carta.docx"));
+ 
+           //     //Configuracion del SMTP
+           //     SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
+           //     //Especificamos las credenciales con las que enviaremos el mail
+           //     SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
+           //     SmtpServer.EnableSsl = true;
+           //     SmtpServer.Send(mail);
+
+           //     txtCorreoE.Text = "";
+           //     txtMensaje.Text = "";
+           //     txtNombre.Text = "";
+           //     txtAsunto.Text = "";
+           //     lblResultado.Text = "Mensaje enviado exitosamente";
+           //     Response.Write("<script LANGUAGE='JavaScript' >alert(' Su Mensaje ha Sido Enviado Correctamente')</script>");
+
+           // }
+           // catch (Exception ex)
+           // {
+           //     lblResultado.Text = "Error: "+ex.Message;
+           // }
+           
            try
            {
-               txtMensaje.Text = "Nombre: " + txtNombre.Text + "\n" + "Correo de Contacto: " +txtCorreoE.Text + "\n" + "Mensaje: " + txtMensaje.Text;
+           using (MailMessage mail = new MailMessage())
+           {
+               mail.From = new MailAddress("clinicaweb@outlook.com");
+               mail.To.Add("txtCorreoE.Text");
+               mail.Subject = txtAsunto.Text;
+               mail.Body = "Nombre: " + txtNombre.Text + "\n" + "Correo de Contacto: " + txtCorreoE.Text + "\n" + "Mensaje: " + txtMensaje.Text;
+               mail.IsBodyHtml = true;
 
-                //Configuración del Mensaje
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                //Especificamos el correo desde el que se enviará el Email y el nombre de la persona que lo envía
-                mail.From = new MailAddress("contactosclinicaweb@gmail.com", txtAsunto.Text, Encoding.UTF8);
-                //Aquí ponemos el asunto del correo
-                mail.Subject = txtAsunto.Text;
-                //Aquí ponemos el mensaje que incluirá el correo
-                mail.Body = txtMensaje.Text;
-                //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
-                mail.To.Add("clinicawebcorreo@gmail.com");
-                //Se le enviara una copia del mensaje al correo del usuario si escribio su correo en su respectivo campo.
-                if (txtCorreoE.Text!=string.Empty)
-                {
-                    mail.CC.Add(txtCorreoE.Text);
-                }
-                //Si queremos enviar archivos adjuntos tenemos que especificar la ruta en donde se encuentran
-                //mail.Attachments.Add(new Attachment(@"C:\Documentos\carta.docx"));
- 
-                //Configuracion del SMTP
-                SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
-                //Especificamos las credenciales con las que enviaremos el mail
-                SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
-                SmtpServer.EnableSsl = true;
-                SmtpServer.Send(mail);
+               using (SmtpClient smtp = new SmtpClient("smtp.live.com", 587))
+               {
+                   smtp.Credentials = new NetworkCredential("PortalWebAd@hotmail.com", "Webclinica123+");
+                   smtp.EnableSsl = enableSSL;
+                   smtp.Send(mail);
+               }
 
-                txtCorreoE.Text = "";
-                txtMensaje.Text = "";
-                txtNombre.Text = "";
-                txtAsunto.Text = "";
-                lblResultado.Text = "Mensaje enviado exitosamente";
-                bool n = true;
-
-                if (n == true)
-                {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert(' Su Mensaje ha Sido Enviado Correctamente')</script>");
-                }
-              
-            }
-            catch (Exception ex)
-            {
-                lblResultado.Text = "Error: "+ex.Message;
-            } 
+               txtCorreoE.Text = "";
+               txtMensaje.Text = "";
+               txtNombre.Text = "";
+               txtAsunto.Text = "";
+               lblResultado.Text = "Mensaje enviado exitosamente";
+               Response.Write("<script LANGUAGE='JavaScript' >alert(' Su Mensaje ha Sido Enviado Correctamente')</script>");
+           }
+           }
+           catch (Exception ex)
+           {
+               lblResultado.Text = "Error: " + ex.Message;
+           }
         }
+
+       
+
     }
 }

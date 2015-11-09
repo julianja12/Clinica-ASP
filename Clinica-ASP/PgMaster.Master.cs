@@ -45,6 +45,7 @@ namespace Clinica_ASP
                 MenuCitas.Visible = false;
                 AdminUser.Visible = false;
                 AdminFormula.Visible = false;
+                ReportesL.Visible = false;
             }
             
         }
