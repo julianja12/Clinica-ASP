@@ -19,58 +19,94 @@ namespace Clinica_ASP
 
         protected void btnAgendar_Click(object sender, EventArgs e)
         {
-            using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
+            try
             {
-
-                int ced = Convert.ToInt32(Session["cedula"]);
-                Cita NuevaCita = new Cita();
-
-                NuevaCita.Cedula = ced;
-                NuevaCita.FechaCita = Convert.ToDateTime(DateFecha.Value);
-                NuevaCita.HoraCita = Convert.ToString(txtHoraC.Value);
-                NuevaCita.Descripcion = txtDescripcion.Value;
-
-                oConexion.Cita.AddObject(NuevaCita);
-                oConexion.SaveChanges();
-
-                string Correo = Session["correo"].ToString();
-                string NombreUsuario = Session["user"].ToString();
-
-                MensajeAsignacionCita(Correo, NombreUsuario, DateFecha.Value, txtHoraC.Value);
-
-                bool n = true;
-
-                if (n == true)
+                using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
                 {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Agendo Correctamente la Cita')</script>");
+                    DateTime Fecha = Convert.ToDateTime(DateFecha.Value);
+                    string Hora = txtHoraC.Value;
+                    int ced = Convert.ToInt32(Session["cedula"]);
+
+                    int queryC = (from C in oConexion.Cita
+                                  where C.FechaCita == Fecha && C.HoraCita == Hora 
+                                  select C.Cedula).FirstOrDefault();
+
+                    if (queryC != 0)
+                    {
+
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('La Cita Ya Ha Sido Reservada')</script>");
+
+                    }
+
+                    else {
+                        Cita NuevaCita = new Cita();
+
+                        NuevaCita.Cedula = ced;
+                        NuevaCita.FechaCita = Convert.ToDateTime(DateFecha.Value);
+                        NuevaCita.HoraCita = Convert.ToString(txtHoraC.Value);
+                        NuevaCita.Descripcion = txtDescripcion.Value;
+
+                        oConexion.Cita.AddObject(NuevaCita);
+                        oConexion.SaveChanges();
+
+                        string Correo = Session["correo"].ToString();
+                        string NombreUsuario = Session["user"].ToString();
+
+                        MensajeAsignacionCita(Correo, NombreUsuario, DateFecha.Value, txtHoraC.Value);
+
+                        bool n = true;
+
+                        if (n == true)
+                        {
+                            Response.Write("<script LANGUAGE='JavaScript' >alert('Se Agendo Correctamente la Cita')</script>");
+                        }
+                    }
+                    
+
                 }
 
+            }
+
+            catch
+            {
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Verifique Los Datos Ingresados')</script>");
             }
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
         {
-            int ced = Convert.ToInt32(Session["cedula"]);
-            using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
+            try
             {
-                List<CitaPaciente> resultado = (from c in oConexion.Usuario
-                                                join f in oConexion.Cita
-                                                on c.Cedula equals f.Cedula
-                                                where c.Cedula == ced
-                                                select new CitaPaciente()
-                                                {
+                int ced = Convert.ToInt32(Session["cedula"]);
+                using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
+                {
+                    List<CitaPaciente> resultado = (from c in oConexion.Usuario
+                                                    join f in oConexion.Cita
+                                                    on c.Cedula equals f.Cedula
+                                                    where c.Cedula == ced
+                                                    select new CitaPaciente()
+                                                    {
+                                                        IdCita = f.IdCita,
+                                                        Cedula = c.Cedula,
+                                                        Nombre = c.NombreUsuario,
+                                                        Apellido = c.ApellidoUsuario,
+                                                        Fecha = f.FechaCita,
+                                                        Hora = f.HoraCita,
+                                                        Telefono = c.telefono
+                                                    }
+                                                          ).ToList();
 
-                                                    Cedula = c.Cedula,
-                                                    Nombre = c.NombreUsuario,
-                                                    Apellido = c.ApellidoUsuario,
-                                                    Fecha = f.FechaCita,
-                                                    Hora = f.HoraCita,
-                                                    Telefono = c.telefono
-                                                }
-                                                      ).ToList();
+                    GridView1.DataSource = resultado;
+                    GridView1.DataBind();
+                }
 
-                GridView1.DataSource = resultado;
-                GridView1.DataBind();
+            }
+
+            catch
+            {
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Revise los Datos Ingresados')</script>");
             }
 
 
@@ -78,13 +114,12 @@ namespace Clinica_ASP
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
-            {
-                int ced = Convert.ToInt32(Session["cedula"]);
-                Cita CancelarCita = oConexion.Cita.Where(w => w.Cedula == ced).SingleOrDefault();
-
-                if (CancelarCita != null)
+            try {
+                using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
                 {
+                    int cita = Convert.ToInt32(txtIdCita.Text);
+                    Cita CancelarCita = oConexion.Cita.Where(w => w.IdCita == cita).Single();
+
                     oConexion.DeleteObject(CancelarCita);
                     oConexion.SaveChanges();
 
@@ -95,6 +130,7 @@ namespace Clinica_ASP
 
                     bool ee = true;
 
+
                     if (ee == true)
                     {
                         Response.Write("<script LANGUAGE='JavaScript' >alert('Se Cancelo la Cita Correctamente')</script>");
@@ -102,10 +138,10 @@ namespace Clinica_ASP
                         List<CitaPaciente> resultado = (from c in oConexion.Usuario
                                                         join f in oConexion.Cita
                                                         on c.Cedula equals f.Cedula
-                                                        where c.Cedula == ced
+                                                        where f.IdCita == cita
                                                         select new CitaPaciente()
                                                         {
-
+                                                            IdCita = f.IdCita,
                                                             Cedula = c.Cedula,
                                                             Nombre = c.NombreUsuario,
                                                             Apellido = c.ApellidoUsuario,
@@ -117,26 +153,34 @@ namespace Clinica_ASP
 
                         GridView1.DataSource = resultado;
                         GridView1.DataBind();
+
                     }
                 }
+            
+            }
+
+            catch
+            {
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Revise los Datos Ingresados')</script>");
             }
         }
 
         public void MensajeAsignacionCita(string CorreoUsuario, string NombreUsuario, string Fecha, string Hora)
         {
-            string mensaje = "Estimado usuario: " + NombreUsuario + "\n" + Environment.NewLine + "Te recordamos que se ha realizado una solicitud de cita medica para el " + Environment.NewLine
+            string mensaje = "Estimado usuario: "+NombreUsuario + "\n" +  Environment.NewLine + "Te recordamos que se ha realizado una solicitud de cita medica para el " +  Environment.NewLine
                               + Fecha + " a las " + Hora + Environment.NewLine + "Cordial Saludo," + Environment.NewLine + Environment.NewLine + "Portal Salud Web";
-
+ 
             MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
-            mail.From = new MailAddress("PortalWebAd@hotmail.com", "Portal Salud Web", Encoding.UTF8);
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
             mail.Subject = "Notificación Fecha de la Cita";
             mail.Body = mensaje;
             mail.To.Add(CorreoUsuario);
 
-            SmtpServer.Port = 587;
+            SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
 
-            SmtpServer.Credentials = new System.Net.NetworkCredential("PortalWebAd@hotmail.com", "Webclinica123+");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
             SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
         }
@@ -147,17 +191,18 @@ namespace Clinica_ASP
                               + Environment.NewLine + "Cordial Saludo," + Environment.NewLine + Environment.NewLine + "Portal Salud Web";
 
             MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
-            mail.From = new MailAddress("PortalWebAd@hotmail.com", "Portal Salud Web", Encoding.UTF8);
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            mail.From = new MailAddress("contactosclinicaweb@gmail.com", "Portal Salud Web", Encoding.UTF8);
             mail.Subject = "Notificación cancelación de la Cita";
             mail.Body = mensaje;
             mail.To.Add(CorreoUsuario);
 
-            SmtpServer.Port = 587;
+            SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
 
-            SmtpServer.Credentials = new System.Net.NetworkCredential("PortalWebAd@hotmail.com", "Webclinica123+"); //Pass gmail: contactos2030
+            SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
             SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
         }
+       
     }
 }

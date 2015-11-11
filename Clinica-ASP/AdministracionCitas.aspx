@@ -10,7 +10,8 @@
 
           <div id="FormCitas"class="form-group">
                 <div class="row">
-
+                 <h4 id="H4">Codigo Cita:</h4>
+        <asp:TextBox ID="txtIdCita" runat="server" CssClass="form-control"></asp:TextBox>
                         <h4 id="H3">Fecha Cita:</h4>
 				            <input type="text" id="DateFecha" runat="server" class="form-control input-lg" step="1" min="2015-11-12" max="2015-12-31" tabindex="6" required/>
                         </div>
@@ -35,6 +36,7 @@ required/><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                 CssClass="table table-hover table-striped">
                 <Columns>
+                    <asp:BoundField DataField="IdCita" HeaderText="Codigo Cita" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre Paciente" />
                     <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
                     <asp:BoundField DataField="Fecha" HeaderText="Fecha de la Cita" />

@@ -8,6 +8,7 @@ namespace Clinica_ASP
     public class CitaPaciente
     {
         public int Cedula { get; set; }
+        public int IdCita { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public DateTime Fecha { get; set; }

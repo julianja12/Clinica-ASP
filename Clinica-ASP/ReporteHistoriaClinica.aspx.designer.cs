@@ -10,7 +10,7 @@
 namespace Clinica_ASP {
     
     
-    public partial class AdministracionCitas {
+    public partial class ReporteHistoriaClinica {
         
         /// <summary>
         /// Control form1.
@@ -22,84 +22,66 @@ namespace Clinica_ASP {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control txtIdCita.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdCita;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control DateFecha.
+        /// Control txtCedulaReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText DateFecha;
+        protected global::System.Web.UI.WebControls.TextBox txtCedulaReporte;
         
         /// <summary>
-        /// Control txtHoraC.
+        /// Control RegularExpressionReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtHoraC;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionReporte;
         
         /// <summary>
-        /// Control txtDescripcion.
+        /// Control btnReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescripcion;
+        protected global::System.Web.UI.WebControls.Button btnReporte;
         
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control ReportViewer1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control ObjectDataSource1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// Control btnAgendar.
+        /// Control ScriptManager1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgendar;
-        
-        /// <summary>
-        /// Control btnConsultar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConsultar;
-        
-        /// <summary>
-        /// Control btnCancelar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
     }
 }
