@@ -15,30 +15,38 @@ namespace Clinica_ASP
             {
                 RegistroL.Visible = false;
                 UsuarioL.Visible = true;
+                ReportesL.Visible = true;
 
-                if (Session["tipoUsuario"].ToString()=="1")
+                if (Session["tipoUsuario"].ToString()=="1") //Administador
                 {
                     AdminUser.Visible = true;
                     AdminFormula.Visible = false;
                     MenuCitas.Visible = false;
                     ReportesL.Visible = true;
+                    ReportCitasP.Visible = true;
+                    ReportHistoriaC.Visible = false;
+                    ReportFormulaM.Visible = false;
                 }
-                else if (Session["tipoUsuario"].ToString()=="2")
+                else if (Session["tipoUsuario"].ToString()=="2") //Medico
                 {
                     AdminUser.Visible = false;
                     AdminFormula.Visible = true;
                     MenuCitas.Visible = false;
-                    ReportesL.Visible = false;
+                    ReportCitasP.Visible = false;
+                    ReportHistoriaC.Visible = true;
+                    ReportFormulaM.Visible = true;
                 }
-                else
+                else //Paciente o usuario sin rol
                 {
                     AdminUser.Visible = false;
                     AdminFormula.Visible = false;
                     MenuCitas.Visible = true;
-                    ReportesL.Visible = false;
+                    ReportCitasP.Visible = false;
+                    ReportHistoriaC.Visible = true;
+                    ReportFormulaM.Visible = true;
                 }
             }
-            else
+            else // Sin iniciar sesion
             {
                 UsuarioL.Visible = false;
                 RegistroL.Visible = true;
@@ -61,6 +69,7 @@ namespace Clinica_ASP
             AdminUser.Visible = false;
             AdminFormula.Visible = false;
             MenuCitas.Visible = false;
+            ReportesL.Visible = false;
             Session.Clear();
             Response.Redirect("PaginadeInicio.aspx");
         }

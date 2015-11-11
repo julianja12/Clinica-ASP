@@ -27,7 +27,16 @@
                 <ul class="nav navbar-nav">
                     <li><a href="AdministracionCitas.aspx" runat="server" id="MenuCitas" >Citas</a></li>
                     <li id="AdminUser" runat="server"><a href="AdministacionUsuarios.aspx">Usuarios</a></li>
-                    <li id="ReportesL" runat="server"><a href="ReportesHistoriaClinica.aspx">Reportes</a></li>
+                    <li class="dropdown" id="ReportesL" runat="server">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" id="A1" runat="server">
+                            Información <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                                <li id="ReportFormulaM" runat="server"><a href="InformeFormulaMedicaCita.aspx">Formula Medica</a></li>
+                                <li id="ReportCitasP" runat="server"><a href="InformeCitasPacienteMedico.aspx">Informe Citas Medicas</a></li>
+                                <li id="ReportHistoriaC" runat="server"><a href="ReporteHistoriaClinica.aspx">Historia Clinica</a></li>
+                        </ul>
+                    </li>   
                     <li id="AdminFormula" runat="server"><a href="AdministracionFormulaMedica.aspx">Historia Clinica</a></li>
                     <li><a href="Contactenos.aspx">Contáctenos</a></li>
                     <li id="RegistroL" runat="server"><a href="Registro.aspx">Registrarse</a></li>
@@ -55,7 +64,7 @@
 </div>
 
 <footer> 
-<hr>
+<hr/>
     <div class="row">
             <div class="col-md-6 hidden-xs hidden-sm">
                 <ul class="list-unstyled list-inline pull-right">

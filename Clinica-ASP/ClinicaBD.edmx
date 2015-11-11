@@ -29,7 +29,7 @@
           </Key>
           <Property Name="IdCita" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Cedula" Type="int" Nullable="false" />
-          <Property Name="FechaCita" Type="date" Nullable="false" />
+          <Property Name="FechaCita" Type="datetime" Nullable="false" />
           <Property Name="HoraCita" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="150" />
         </EntityType>
@@ -58,7 +58,7 @@
           <Property Name="ApellidoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Email" Type="varchar" Nullable="false" MaxLength="150" />
           <Property Name="Contrasena" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="anionacimiento" Type="date" Nullable="false" />
+          <Property Name="anionacimiento" Type="datetime" Nullable="false" />
           <Property Name="telefono" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__Cita__Cedula__09DE7BCC">
@@ -97,9 +97,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="HistoriaPaciente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="cedula" Type="int" Mode="In" />
-        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
