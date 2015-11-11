@@ -22,7 +22,7 @@
         </p>
     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
         Font-Size="8pt" InteractiveDeviceInfos="(Colección)" 
-        WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+        WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="675px">
         <LocalReport ReportPath="ReporteHistoriaUsuario.rdlc">
             <DataSources>
                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />

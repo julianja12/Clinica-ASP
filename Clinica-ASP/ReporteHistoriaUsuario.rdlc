@@ -470,7 +470,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.59042in</Top>
-        <Left>1.30917in</Left>
+        <Left>0.36125in</Left>
         <Height>0.5in</Height>
         <Width>6in</Width>
         <Style>
@@ -480,10 +480,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.37167in</Height>
     <Style />
   </Body>
-  <Width>8.54875in</Width>
+  <Width>6.80917in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -508,7 +508,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox30</rd:DefaultName>
           <Top>0.31958in</Top>
-          <Left>3.09042in</Left>
+          <Left>1.97583in</Left>
           <Height>0.41667in</Height>
           <Width>2.57292in</Width>
           <Style>

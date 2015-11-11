@@ -71,6 +71,8 @@
     <Content Include="Img\Clinica.jpg" />
     <Content Include="Img\contacto.jpg" />
     <Content Include="Img\fondo-gris.png" />
+    <Content Include="InformeCitasPacienteMedico.aspx" />
+    <Content Include="InformeFormulaMedicaCita.aspx" />
     <Content Include="PaginadeInicio.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="ReporteHistoriaClinica.aspx" />
@@ -122,6 +124,20 @@
     </Compile>
     <Compile Include="Contactenos.aspx.designer.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InformeCitasPacienteMedico.aspx.cs">
+      <DependentUpon>InformeCitasPacienteMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformeCitasPacienteMedico.aspx.designer.cs">
+      <DependentUpon>InformeCitasPacienteMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InformeFormulaMedicaCita.aspx.cs">
+      <DependentUpon>InformeFormulaMedicaCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformeFormulaMedicaCita.aspx.designer.cs">
+      <DependentUpon>InformeFormulaMedicaCita.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginadeInicio.aspx.cs">
       <DependentUpon>PaginadeInicio.aspx</DependentUpon>

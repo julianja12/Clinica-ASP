@@ -16,7 +16,12 @@ namespace Clinica_ASP
 
         protected void btnReporte_Click(object sender, EventArgs e)
         {
-            ReportViewer1.LocalReport.Refresh();
+            try { ReportViewer1.LocalReport.Refresh(); }
+            catch
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert(' Verifique Los Datos Ingresados')</script>");
+            }
+            
         }
     }
 }

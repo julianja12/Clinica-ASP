@@ -270,21 +270,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ClinicaBD">
-        <EntityTypeShape EntityType="ClinicaAspModel.Cita" Width="1.5" PointX="3" PointY="1.125" Height="2.3648893229166656" />
-        <EntityTypeShape EntityType="ClinicaAspModel.FormulaMedica" Width="1.5" PointX="5.25" PointY="1.375" Height="1.7879850260416665" />
-        <EntityTypeShape EntityType="ClinicaAspModel.TipoUsuario" Width="1.5" PointX="3" PointY="4.125" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ClinicaAspModel.Usuario" Width="1.5" PointX="0.75" PointY="2.125" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="ClinicaAspModel.Cita" Width="1.5" PointX="3" PointY="1.125" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="ClinicaAspModel.FormulaMedica" Width="1.5" PointX="5.25" PointY="1.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ClinicaAspModel.TipoUsuario" Width="1.5" PointX="3" PointY="4.125" Height="1.787985026041671" />
+        <EntityTypeShape EntityType="ClinicaAspModel.Usuario" Width="1.5" PointX="0.75" PointY="2.125" Height="2.7494921875000036" />
         <AssociationConnector Association="ClinicaAspModel.FK__Cita__Cedula__09DE7BCC" >
-          <ConnectorPoint PointX="2.25" PointY="2.8074446614583328" />
-          <ConnectorPoint PointX="3" PointY="2.8074446614583328" />
+          <ConnectorPoint PointX="2.25" PointY="2.8074446614583337" />
+          <ConnectorPoint PointX="3" PointY="2.8074446614583337" />
         </AssociationConnector>
         <AssociationConnector Association="ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9" >
-          <ConnectorPoint PointX="4.5" PointY="2.2689925130208333" />
-          <ConnectorPoint PointX="5.25" PointY="2.2689925130208333" />
+          <ConnectorPoint PointX="4.5" PointY="2.2689925130208337" />
+          <ConnectorPoint PointX="5.25" PointY="2.2689925130208337" />
         </AssociationConnector>
         <AssociationConnector Association="ClinicaAspModel.FK__TipoUsuar__Cedul__0519C6AF" >
-          <ConnectorPoint PointX="2.25" PointY="4.49974609375" />
-          <ConnectorPoint PointX="3" PointY="4.49974609375" />
+          <ConnectorPoint PointX="2.25" PointY="4.4997460937500016" />
+          <ConnectorPoint PointX="3" PointY="4.4997460937500016" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

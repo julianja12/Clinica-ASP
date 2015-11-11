@@ -57,7 +57,9 @@
 &nbsp;
     <asp:Button ID="btnRol" runat="server" CssClass="btn btn-primary" 
         onclick="btnRol_Click" Text="Asignar Rol" />
-    </p>
+      <asp:Button ID="btnRolC" runat="server" CssClass="btn btn-primary" 
+            Text="Quitar Rol" onclick="btnRolC_Click" />
+
    
     <p>
         <asp:EntityDataSource ID="EntityDataSource1" runat="server" 
