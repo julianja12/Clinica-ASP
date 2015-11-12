@@ -21,6 +21,7 @@ using System.Xml.Serialization;
 
 [assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__Cita__Cedula__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.Cita), true)]
 [assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__FormulaMe__IdCit__0EA330E9", "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Cita), "FormulaMedica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.FormulaMedica), true)]
+[assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK_FormulaMedica_Usuario", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "FormulaMedica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Clinica_ASP.FormulaMedica), true)]
 [assembly: EdmRelationshipAttribute("ClinicaAspModel", "FK__TipoUsuar__Cedul__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Clinica_ASP.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Clinica_ASP.TipoUsuario), true)]
 
 #endregion
@@ -422,12 +423,14 @@ namespace Clinica_ASP
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
         /// <param name="idFormulaMedica">Valor inicial de la propiedad IdFormulaMedica.</param>
         /// <param name="recetaMedica">Valor inicial de la propiedad RecetaMedica.</param>
-        public static FormulaMedica CreateFormulaMedica(global::System.Int32 idCita, global::System.Int32 idFormulaMedica, global::System.String recetaMedica)
+        /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
+        public static FormulaMedica CreateFormulaMedica(global::System.Int32 idCita, global::System.Int32 idFormulaMedica, global::System.String recetaMedica, global::System.Int32 cedula)
         {
             FormulaMedica formulaMedica = new FormulaMedica();
             formulaMedica.IdCita = idCita;
             formulaMedica.IdFormulaMedica = idFormulaMedica;
             formulaMedica.RecetaMedica = recetaMedica;
+            formulaMedica.Cedula = cedula;
             return formulaMedica;
         }
 
@@ -509,6 +512,30 @@ namespace Clinica_ASP
         private global::System.String _RecetaMedica;
         partial void OnRecetaMedicaChanging(global::System.String value);
         partial void OnRecetaMedicaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Cedula
+        {
+            get
+            {
+                return _Cedula;
+            }
+            set
+            {
+                OnCedulaChanging(value);
+                ReportPropertyChanging("Cedula");
+                _Cedula = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cedula");
+                OnCedulaChanged();
+            }
+        }
+        private global::System.Int32 _Cedula;
+        partial void OnCedulaChanging(global::System.Int32 value);
+        partial void OnCedulaChanged();
 
         #endregion
 
@@ -549,6 +576,44 @@ namespace Clinica_ASP
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cita>("ClinicaAspModel.FK__FormulaMe__IdCit__0EA330E9", "Cita", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK_FormulaMedica_Usuario", "Usuario")]
+        public Usuario Usuario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK_FormulaMedica_Usuario", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK_FormulaMedica_Usuario", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> UsuarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaAspModel.FK_FormulaMedica_Usuario", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("ClinicaAspModel.FK_FormulaMedica_Usuario", "Usuario", value);
                 }
             }
         }
@@ -939,6 +1004,28 @@ namespace Clinica_ASP
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaAspModel.FK__Cita__Cedula__09DE7BCC", "Cita", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaAspModel", "FK_FormulaMedica_Usuario", "FormulaMedica")]
+        public EntityCollection<FormulaMedica> FormulaMedica
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<FormulaMedica>("ClinicaAspModel.FK_FormulaMedica_Usuario", "FormulaMedica");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<FormulaMedica>("ClinicaAspModel.FK_FormulaMedica_Usuario", "FormulaMedica", value);
                 }
             }
         }

@@ -10,7 +10,7 @@
 namespace Clinica_ASP {
     
     
-    public partial class InformeCitasPacienteMedico {
+    public partial class InformeCitaMedico {
         
         /// <summary>
         /// Control form1.
@@ -31,58 +31,31 @@ namespace Clinica_ASP {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control txtCedulaReporte.
+        /// Control txtCedulaReporte4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCedulaReporte;
+        protected global::System.Web.UI.WebControls.TextBox txtCedulaReporte4;
         
         /// <summary>
-        /// Control RegularExpressionReporte.
+        /// Control RegularExpressionReporte4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionReporte;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionReporte4;
         
         /// <summary>
-        /// Control btnReporte.
+        /// Control btnReporte4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReporte;
-        
-        /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// Control ddlTipo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipo;
-        
-        /// <summary>
-        /// Control btnTipoU.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTipoU;
+        protected global::System.Web.UI.WebControls.Button btnReporte4;
         
         /// <summary>
         /// Control ReportViewer1.

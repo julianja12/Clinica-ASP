@@ -10,7 +10,7 @@
 namespace Clinica_ASP {
     
     
-    public partial class InformeFormulaMedicaCita {
+    public partial class InformeCitasPaciente {
         
         /// <summary>
         /// Control form1.
@@ -31,31 +31,31 @@ namespace Clinica_ASP {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control txtCedulaReporte2.
+        /// Control txtCedulaReporte3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCedulaReporte2;
+        protected global::System.Web.UI.WebControls.TextBox txtCedulaReporte3;
         
         /// <summary>
-        /// Control RegularExpressionReporte2.
+        /// Control RegularExpressionReporte3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionReporte2;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionReporte3;
         
         /// <summary>
-        /// Control btnReporte2.
+        /// Control btnReporte3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReporte2;
+        protected global::System.Web.UI.WebControls.Button btnReporte3;
         
         /// <summary>
         /// Control ReportViewer1.

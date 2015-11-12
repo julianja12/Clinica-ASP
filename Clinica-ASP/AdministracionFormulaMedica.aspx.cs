@@ -33,6 +33,7 @@ namespace Clinica_ASP
                                                         Nombre = c.NombreUsuario,
                                                         Apellido = c.ApellidoUsuario,
                                                         Fecha = f.FechaCita,
+                                                        Descripcion =  f.Descripcion
 
                                                     }
                                                     ).ToList();
@@ -53,12 +54,13 @@ namespace Clinica_ASP
             try {
                 using (ClinicaAspEntities oConexion = new ClinicaAspEntities())
                 {
-
+                    int ced = Convert.ToInt32(Session["cedula"]);
                     int IdCita = Convert.ToInt32(txtIdCita.Text);
 
                     FormulaMedica NuevaFormula = new FormulaMedica();
 
                     NuevaFormula.IdCita = IdCita;
+                    NuevaFormula.Cedula = ced; 
                     NuevaFormula.RecetaMedica = txtFormula.Text;
 
                     oConexion.FormulaMedica.AddObject(NuevaFormula);

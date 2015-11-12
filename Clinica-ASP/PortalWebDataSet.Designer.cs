@@ -26,7 +26,11 @@ namespace Clinica_ASP {
         
         private HistoriaPacienteDataTable tableHistoriaPaciente;
         
-        private InformeCitasDataTable tableInformeCitas;
+        private InformeCitaDataTable tableInformeCita;
+        
+        private InformeCitaPacienteDataTable tableInformeCitaPaciente;
+        
+        private InformeCitaMedicoDataTable tableInformeCitaMedico;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -59,8 +63,14 @@ namespace Clinica_ASP {
                 if ((ds.Tables["HistoriaPaciente"] != null)) {
                     base.Tables.Add(new HistoriaPacienteDataTable(ds.Tables["HistoriaPaciente"]));
                 }
-                if ((ds.Tables["InformeCitas"] != null)) {
-                    base.Tables.Add(new InformeCitasDataTable(ds.Tables["InformeCitas"]));
+                if ((ds.Tables["InformeCita"] != null)) {
+                    base.Tables.Add(new InformeCitaDataTable(ds.Tables["InformeCita"]));
+                }
+                if ((ds.Tables["InformeCitaPaciente"] != null)) {
+                    base.Tables.Add(new InformeCitaPacienteDataTable(ds.Tables["InformeCitaPaciente"]));
+                }
+                if ((ds.Tables["InformeCitaMedico"] != null)) {
+                    base.Tables.Add(new InformeCitaMedicoDataTable(ds.Tables["InformeCitaMedico"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -94,9 +104,29 @@ namespace Clinica_ASP {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public InformeCitasDataTable InformeCitas {
+        public InformeCitaDataTable InformeCita {
             get {
-                return this.tableInformeCitas;
+                return this.tableInformeCita;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public InformeCitaPacienteDataTable InformeCitaPaciente {
+            get {
+                return this.tableInformeCitaPaciente;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public InformeCitaMedicoDataTable InformeCitaMedico {
+            get {
+                return this.tableInformeCitaMedico;
             }
         }
         
@@ -170,8 +200,14 @@ namespace Clinica_ASP {
                 if ((ds.Tables["HistoriaPaciente"] != null)) {
                     base.Tables.Add(new HistoriaPacienteDataTable(ds.Tables["HistoriaPaciente"]));
                 }
-                if ((ds.Tables["InformeCitas"] != null)) {
-                    base.Tables.Add(new InformeCitasDataTable(ds.Tables["InformeCitas"]));
+                if ((ds.Tables["InformeCita"] != null)) {
+                    base.Tables.Add(new InformeCitaDataTable(ds.Tables["InformeCita"]));
+                }
+                if ((ds.Tables["InformeCitaPaciente"] != null)) {
+                    base.Tables.Add(new InformeCitaPacienteDataTable(ds.Tables["InformeCitaPaciente"]));
+                }
+                if ((ds.Tables["InformeCitaMedico"] != null)) {
+                    base.Tables.Add(new InformeCitaMedicoDataTable(ds.Tables["InformeCitaMedico"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -212,10 +248,22 @@ namespace Clinica_ASP {
                     this.tableHistoriaPaciente.InitVars();
                 }
             }
-            this.tableInformeCitas = ((InformeCitasDataTable)(base.Tables["InformeCitas"]));
+            this.tableInformeCita = ((InformeCitaDataTable)(base.Tables["InformeCita"]));
             if ((initTable == true)) {
-                if ((this.tableInformeCitas != null)) {
-                    this.tableInformeCitas.InitVars();
+                if ((this.tableInformeCita != null)) {
+                    this.tableInformeCita.InitVars();
+                }
+            }
+            this.tableInformeCitaPaciente = ((InformeCitaPacienteDataTable)(base.Tables["InformeCitaPaciente"]));
+            if ((initTable == true)) {
+                if ((this.tableInformeCitaPaciente != null)) {
+                    this.tableInformeCitaPaciente.InitVars();
+                }
+            }
+            this.tableInformeCitaMedico = ((InformeCitaMedicoDataTable)(base.Tables["InformeCitaMedico"]));
+            if ((initTable == true)) {
+                if ((this.tableInformeCitaMedico != null)) {
+                    this.tableInformeCitaMedico.InitVars();
                 }
             }
         }
@@ -230,8 +278,12 @@ namespace Clinica_ASP {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableHistoriaPaciente = new HistoriaPacienteDataTable();
             base.Tables.Add(this.tableHistoriaPaciente);
-            this.tableInformeCitas = new InformeCitasDataTable();
-            base.Tables.Add(this.tableInformeCitas);
+            this.tableInformeCita = new InformeCitaDataTable();
+            base.Tables.Add(this.tableInformeCita);
+            this.tableInformeCitaPaciente = new InformeCitaPacienteDataTable();
+            base.Tables.Add(this.tableInformeCitaPaciente);
+            this.tableInformeCitaMedico = new InformeCitaMedicoDataTable();
+            base.Tables.Add(this.tableInformeCitaMedico);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,7 +294,19 @@ namespace Clinica_ASP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeInformeCitas() {
+        private bool ShouldSerializeInformeCita() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeInformeCitaPaciente() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeInformeCitaMedico() {
             return false;
         }
         
@@ -305,7 +369,13 @@ namespace Clinica_ASP {
         public delegate void HistoriaPacienteRowChangeEventHandler(object sender, HistoriaPacienteRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void InformeCitasRowChangeEventHandler(object sender, InformeCitasRowChangeEvent e);
+        public delegate void InformeCitaRowChangeEventHandler(object sender, InformeCitaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void InformeCitaPacienteRowChangeEventHandler(object sender, InformeCitaPacienteRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void InformeCitaMedicoRowChangeEventHandler(object sender, InformeCitaMedicoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -460,13 +530,6 @@ namespace Clinica_ASP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HistoriaPacienteRow FindByCedula(int Cedula) {
-                return ((HistoriaPacienteRow)(this.Rows.Find(new object[] {
-                            Cedula})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 HistoriaPacienteDataTable cln = ((HistoriaPacienteDataTable)(base.Clone()));
                 cln.InitVars();
@@ -505,16 +568,11 @@ namespace Clinica_ASP {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnRecetaMedica = new global::System.Data.DataColumn("RecetaMedica", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRecetaMedica);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCedula}, true));
-                this.columnCedula.AllowDBNull = false;
-                this.columnCedula.Unique = true;
                 this.columnNombreUsuario.AllowDBNull = false;
                 this.columnNombreUsuario.MaxLength = 50;
                 this.columnApellidoUsuario.AllowDBNull = false;
                 this.columnApellidoUsuario.MaxLength = 50;
                 this.columnanionacimiento.AllowDBNull = false;
-                this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 150;
                 this.columnRecetaMedica.AllowDBNull = false;
                 this.columnRecetaMedica.MaxLength = 150;
@@ -649,24 +707,24 @@ namespace Clinica_ASP {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class InformeCitasDataTable : global::System.Data.TypedTableBase<InformeCitasRow> {
+        public partial class InformeCitaDataTable : global::System.Data.TypedTableBase<InformeCitaRow> {
             
             private global::System.Data.DataColumn columnCedula;
-            
-            private global::System.Data.DataColumn columnNombreUsuario;
-            
-            private global::System.Data.DataColumn columnApellidoUsuario;
-            
-            private global::System.Data.DataColumn columnNombreTipoUsuario;
             
             private global::System.Data.DataColumn columnIdCita;
             
             private global::System.Data.DataColumn columnFechaCita;
             
+            private global::System.Data.DataColumn columnHoraCita;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnRecetaMedica;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformeCitasDataTable() {
-                this.TableName = "InformeCitas";
+            public InformeCitaDataTable() {
+                this.TableName = "InformeCita";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -674,7 +732,7 @@ namespace Clinica_ASP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal InformeCitasDataTable(global::System.Data.DataTable table) {
+            internal InformeCitaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -691,7 +749,347 @@ namespace Clinica_ASP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected InformeCitasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected InformeCitaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CedulaColumn {
+                get {
+                    return this.columnCedula;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdCitaColumn {
+                get {
+                    return this.columnIdCita;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaCitaColumn {
+                get {
+                    return this.columnFechaCita;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HoraCitaColumn {
+                get {
+                    return this.columnHoraCita;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RecetaMedicaColumn {
+                get {
+                    return this.columnRecetaMedica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaRow this[int index] {
+                get {
+                    return ((InformeCitaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaRowChangeEventHandler InformeCitaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaRowChangeEventHandler InformeCitaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaRowChangeEventHandler InformeCitaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaRowChangeEventHandler InformeCitaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddInformeCitaRow(InformeCitaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaRow AddInformeCitaRow(int Cedula, System.DateTime FechaCita, string HoraCita, string Descripcion, string RecetaMedica) {
+                InformeCitaRow rowInformeCitaRow = ((InformeCitaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Cedula,
+                        null,
+                        FechaCita,
+                        HoraCita,
+                        Descripcion,
+                        RecetaMedica};
+                rowInformeCitaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowInformeCitaRow);
+                return rowInformeCitaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaRow FindByIdCita(int IdCita) {
+                return ((InformeCitaRow)(this.Rows.Find(new object[] {
+                            IdCita})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                InformeCitaDataTable cln = ((InformeCitaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new InformeCitaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnCedula = base.Columns["Cedula"];
+                this.columnIdCita = base.Columns["IdCita"];
+                this.columnFechaCita = base.Columns["FechaCita"];
+                this.columnHoraCita = base.Columns["HoraCita"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnRecetaMedica = base.Columns["RecetaMedica"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnCedula = new global::System.Data.DataColumn("Cedula", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCedula);
+                this.columnIdCita = new global::System.Data.DataColumn("IdCita", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdCita);
+                this.columnFechaCita = new global::System.Data.DataColumn("FechaCita", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaCita);
+                this.columnHoraCita = new global::System.Data.DataColumn("HoraCita", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHoraCita);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnRecetaMedica = new global::System.Data.DataColumn("RecetaMedica", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecetaMedica);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdCita}, true));
+                this.columnCedula.AllowDBNull = false;
+                this.columnIdCita.AutoIncrement = true;
+                this.columnIdCita.AutoIncrementSeed = -1;
+                this.columnIdCita.AutoIncrementStep = -1;
+                this.columnIdCita.AllowDBNull = false;
+                this.columnIdCita.ReadOnly = true;
+                this.columnIdCita.Unique = true;
+                this.columnFechaCita.AllowDBNull = false;
+                this.columnHoraCita.AllowDBNull = false;
+                this.columnHoraCita.MaxLength = 50;
+                this.columnDescripcion.AllowDBNull = false;
+                this.columnDescripcion.MaxLength = 150;
+                this.columnRecetaMedica.AllowDBNull = false;
+                this.columnRecetaMedica.MaxLength = 150;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaRow NewInformeCitaRow() {
+                return ((InformeCitaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new InformeCitaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(InformeCitaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.InformeCitaRowChanged != null)) {
+                    this.InformeCitaRowChanged(this, new InformeCitaRowChangeEvent(((InformeCitaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.InformeCitaRowChanging != null)) {
+                    this.InformeCitaRowChanging(this, new InformeCitaRowChangeEvent(((InformeCitaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.InformeCitaRowDeleted != null)) {
+                    this.InformeCitaRowDeleted(this, new InformeCitaRowChangeEvent(((InformeCitaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.InformeCitaRowDeleting != null)) {
+                    this.InformeCitaRowDeleting(this, new InformeCitaRowChangeEvent(((InformeCitaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveInformeCitaRow(InformeCitaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                PortalWebDataSet ds = new PortalWebDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "InformeCitaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class InformeCitaPacienteDataTable : global::System.Data.TypedTableBase<InformeCitaPacienteRow> {
+            
+            private global::System.Data.DataColumn columnCedula;
+            
+            private global::System.Data.DataColumn columnNombreUsuario;
+            
+            private global::System.Data.DataColumn columnApellidoUsuario;
+            
+            private global::System.Data.DataColumn columnIdCita;
+            
+            private global::System.Data.DataColumn columnFechaCita;
+            
+            private global::System.Data.DataColumn columnNombreTipoUsuario;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaPacienteDataTable() {
+                this.TableName = "InformeCitaPaciente";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal InformeCitaPacienteDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected InformeCitaPacienteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -722,14 +1120,6 @@ namespace Clinica_ASP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NombreTipoUsuarioColumn {
-                get {
-                    return this.columnNombreTipoUsuario;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn IdCitaColumn {
                 get {
                     return this.columnIdCita;
@@ -746,6 +1136,14 @@ namespace Clinica_ASP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreTipoUsuarioColumn {
+                get {
+                    return this.columnNombreTipoUsuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -755,50 +1153,57 @@ namespace Clinica_ASP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformeCitasRow this[int index] {
+            public InformeCitaPacienteRow this[int index] {
                 get {
-                    return ((InformeCitasRow)(this.Rows[index]));
+                    return ((InformeCitaPacienteRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event InformeCitasRowChangeEventHandler InformeCitasRowChanging;
+            public event InformeCitaPacienteRowChangeEventHandler InformeCitaPacienteRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event InformeCitasRowChangeEventHandler InformeCitasRowChanged;
+            public event InformeCitaPacienteRowChangeEventHandler InformeCitaPacienteRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event InformeCitasRowChangeEventHandler InformeCitasRowDeleting;
+            public event InformeCitaPacienteRowChangeEventHandler InformeCitaPacienteRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event InformeCitasRowChangeEventHandler InformeCitasRowDeleted;
+            public event InformeCitaPacienteRowChangeEventHandler InformeCitaPacienteRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddInformeCitasRow(InformeCitasRow row) {
+            public void AddInformeCitaPacienteRow(InformeCitaPacienteRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformeCitasRow AddInformeCitasRow(int Cedula, string NombreUsuario, string ApellidoUsuario, string NombreTipoUsuario, System.DateTime FechaCita) {
-                InformeCitasRow rowInformeCitasRow = ((InformeCitasRow)(this.NewRow()));
+            public InformeCitaPacienteRow AddInformeCitaPacienteRow(int Cedula, string NombreUsuario, string ApellidoUsuario, System.DateTime FechaCita, string NombreTipoUsuario) {
+                InformeCitaPacienteRow rowInformeCitaPacienteRow = ((InformeCitaPacienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Cedula,
                         NombreUsuario,
                         ApellidoUsuario,
-                        NombreTipoUsuario,
                         null,
-                        FechaCita};
-                rowInformeCitasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowInformeCitasRow);
-                return rowInformeCitasRow;
+                        FechaCita,
+                        NombreTipoUsuario};
+                rowInformeCitaPacienteRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowInformeCitaPacienteRow);
+                return rowInformeCitaPacienteRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaPacienteRow FindByIdCita(int IdCita) {
+                return ((InformeCitaPacienteRow)(this.Rows.Find(new object[] {
+                            IdCita})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                InformeCitasDataTable cln = ((InformeCitasDataTable)(base.Clone()));
+                InformeCitaPacienteDataTable cln = ((InformeCitaPacienteDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -806,7 +1211,7 @@ namespace Clinica_ASP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new InformeCitasDataTable();
+                return new InformeCitaPacienteDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -815,9 +1220,9 @@ namespace Clinica_ASP {
                 this.columnCedula = base.Columns["Cedula"];
                 this.columnNombreUsuario = base.Columns["NombreUsuario"];
                 this.columnApellidoUsuario = base.Columns["ApellidoUsuario"];
-                this.columnNombreTipoUsuario = base.Columns["NombreTipoUsuario"];
                 this.columnIdCita = base.Columns["IdCita"];
                 this.columnFechaCita = base.Columns["FechaCita"];
+                this.columnNombreTipoUsuario = base.Columns["NombreTipoUsuario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -829,51 +1234,54 @@ namespace Clinica_ASP {
                 base.Columns.Add(this.columnNombreUsuario);
                 this.columnApellidoUsuario = new global::System.Data.DataColumn("ApellidoUsuario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApellidoUsuario);
-                this.columnNombreTipoUsuario = new global::System.Data.DataColumn("NombreTipoUsuario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreTipoUsuario);
                 this.columnIdCita = new global::System.Data.DataColumn("IdCita", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdCita);
                 this.columnFechaCita = new global::System.Data.DataColumn("FechaCita", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaCita);
+                this.columnNombreTipoUsuario = new global::System.Data.DataColumn("NombreTipoUsuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreTipoUsuario);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdCita}, true));
                 this.columnCedula.AllowDBNull = false;
                 this.columnNombreUsuario.AllowDBNull = false;
                 this.columnNombreUsuario.MaxLength = 50;
                 this.columnApellidoUsuario.AllowDBNull = false;
                 this.columnApellidoUsuario.MaxLength = 50;
-                this.columnNombreTipoUsuario.AllowDBNull = false;
-                this.columnNombreTipoUsuario.MaxLength = 50;
                 this.columnIdCita.AutoIncrement = true;
                 this.columnIdCita.AutoIncrementSeed = -1;
                 this.columnIdCita.AutoIncrementStep = -1;
                 this.columnIdCita.AllowDBNull = false;
                 this.columnIdCita.ReadOnly = true;
+                this.columnIdCita.Unique = true;
                 this.columnFechaCita.AllowDBNull = false;
+                this.columnNombreTipoUsuario.AllowDBNull = false;
+                this.columnNombreTipoUsuario.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformeCitasRow NewInformeCitasRow() {
-                return ((InformeCitasRow)(this.NewRow()));
+            public InformeCitaPacienteRow NewInformeCitaPacienteRow() {
+                return ((InformeCitaPacienteRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new InformeCitasRow(builder);
+                return new InformeCitaPacienteRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(InformeCitasRow);
+                return typeof(InformeCitaPacienteRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.InformeCitasRowChanged != null)) {
-                    this.InformeCitasRowChanged(this, new InformeCitasRowChangeEvent(((InformeCitasRow)(e.Row)), e.Action));
+                if ((this.InformeCitaPacienteRowChanged != null)) {
+                    this.InformeCitaPacienteRowChanged(this, new InformeCitaPacienteRowChangeEvent(((InformeCitaPacienteRow)(e.Row)), e.Action));
                 }
             }
             
@@ -881,8 +1289,8 @@ namespace Clinica_ASP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.InformeCitasRowChanging != null)) {
-                    this.InformeCitasRowChanging(this, new InformeCitasRowChangeEvent(((InformeCitasRow)(e.Row)), e.Action));
+                if ((this.InformeCitaPacienteRowChanging != null)) {
+                    this.InformeCitaPacienteRowChanging(this, new InformeCitaPacienteRowChangeEvent(((InformeCitaPacienteRow)(e.Row)), e.Action));
                 }
             }
             
@@ -890,8 +1298,8 @@ namespace Clinica_ASP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.InformeCitasRowDeleted != null)) {
-                    this.InformeCitasRowDeleted(this, new InformeCitasRowChangeEvent(((InformeCitasRow)(e.Row)), e.Action));
+                if ((this.InformeCitaPacienteRowDeleted != null)) {
+                    this.InformeCitaPacienteRowDeleted(this, new InformeCitaPacienteRowChangeEvent(((InformeCitaPacienteRow)(e.Row)), e.Action));
                 }
             }
             
@@ -899,14 +1307,14 @@ namespace Clinica_ASP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.InformeCitasRowDeleting != null)) {
-                    this.InformeCitasRowDeleting(this, new InformeCitasRowChangeEvent(((InformeCitasRow)(e.Row)), e.Action));
+                if ((this.InformeCitaPacienteRowDeleting != null)) {
+                    this.InformeCitaPacienteRowDeleting(this, new InformeCitaPacienteRowChangeEvent(((InformeCitaPacienteRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveInformeCitasRow(InformeCitasRow row) {
+            public void RemoveInformeCitaPacienteRow(InformeCitaPacienteRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -933,7 +1341,351 @@ namespace Clinica_ASP {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "InformeCitasDataTable";
+                attribute2.FixedValue = "InformeCitaPacienteDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class InformeCitaMedicoDataTable : global::System.Data.TypedTableBase<InformeCitaMedicoRow> {
+            
+            private global::System.Data.DataColumn columnIdCita;
+            
+            private global::System.Data.DataColumn columnFechaCita;
+            
+            private global::System.Data.DataColumn columnIdFormulaMedica;
+            
+            private global::System.Data.DataColumn columnRecetaMedica;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnCedula;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaMedicoDataTable() {
+                this.TableName = "InformeCitaMedico";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal InformeCitaMedicoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected InformeCitaMedicoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdCitaColumn {
+                get {
+                    return this.columnIdCita;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaCitaColumn {
+                get {
+                    return this.columnFechaCita;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdFormulaMedicaColumn {
+                get {
+                    return this.columnIdFormulaMedica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RecetaMedicaColumn {
+                get {
+                    return this.columnRecetaMedica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CedulaColumn {
+                get {
+                    return this.columnCedula;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaMedicoRow this[int index] {
+                get {
+                    return ((InformeCitaMedicoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaMedicoRowChangeEventHandler InformeCitaMedicoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaMedicoRowChangeEventHandler InformeCitaMedicoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaMedicoRowChangeEventHandler InformeCitaMedicoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event InformeCitaMedicoRowChangeEventHandler InformeCitaMedicoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddInformeCitaMedicoRow(InformeCitaMedicoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaMedicoRow AddInformeCitaMedicoRow(System.DateTime FechaCita, string RecetaMedica, string Descripcion, int Cedula) {
+                InformeCitaMedicoRow rowInformeCitaMedicoRow = ((InformeCitaMedicoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        FechaCita,
+                        null,
+                        RecetaMedica,
+                        Descripcion,
+                        Cedula};
+                rowInformeCitaMedicoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowInformeCitaMedicoRow);
+                return rowInformeCitaMedicoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaMedicoRow FindByIdCitaIdFormulaMedica(int IdCita, int IdFormulaMedica) {
+                return ((InformeCitaMedicoRow)(this.Rows.Find(new object[] {
+                            IdCita,
+                            IdFormulaMedica})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                InformeCitaMedicoDataTable cln = ((InformeCitaMedicoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new InformeCitaMedicoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnIdCita = base.Columns["IdCita"];
+                this.columnFechaCita = base.Columns["FechaCita"];
+                this.columnIdFormulaMedica = base.Columns["IdFormulaMedica"];
+                this.columnRecetaMedica = base.Columns["RecetaMedica"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnCedula = base.Columns["Cedula"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnIdCita = new global::System.Data.DataColumn("IdCita", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdCita);
+                this.columnFechaCita = new global::System.Data.DataColumn("FechaCita", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaCita);
+                this.columnIdFormulaMedica = new global::System.Data.DataColumn("IdFormulaMedica", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdFormulaMedica);
+                this.columnRecetaMedica = new global::System.Data.DataColumn("RecetaMedica", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecetaMedica);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnCedula = new global::System.Data.DataColumn("Cedula", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCedula);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdCita,
+                                this.columnIdFormulaMedica}, true));
+                this.columnIdCita.AutoIncrement = true;
+                this.columnIdCita.AutoIncrementSeed = -1;
+                this.columnIdCita.AutoIncrementStep = -1;
+                this.columnIdCita.AllowDBNull = false;
+                this.columnIdCita.ReadOnly = true;
+                this.columnFechaCita.AllowDBNull = false;
+                this.columnIdFormulaMedica.AutoIncrement = true;
+                this.columnIdFormulaMedica.AutoIncrementSeed = -1;
+                this.columnIdFormulaMedica.AutoIncrementStep = -1;
+                this.columnIdFormulaMedica.AllowDBNull = false;
+                this.columnIdFormulaMedica.ReadOnly = true;
+                this.columnRecetaMedica.AllowDBNull = false;
+                this.columnRecetaMedica.MaxLength = 150;
+                this.columnDescripcion.AllowDBNull = false;
+                this.columnDescripcion.MaxLength = 150;
+                this.columnCedula.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaMedicoRow NewInformeCitaMedicoRow() {
+                return ((InformeCitaMedicoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new InformeCitaMedicoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(InformeCitaMedicoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.InformeCitaMedicoRowChanged != null)) {
+                    this.InformeCitaMedicoRowChanged(this, new InformeCitaMedicoRowChangeEvent(((InformeCitaMedicoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.InformeCitaMedicoRowChanging != null)) {
+                    this.InformeCitaMedicoRowChanging(this, new InformeCitaMedicoRowChangeEvent(((InformeCitaMedicoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.InformeCitaMedicoRowDeleted != null)) {
+                    this.InformeCitaMedicoRowDeleted(this, new InformeCitaMedicoRowChangeEvent(((InformeCitaMedicoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.InformeCitaMedicoRowDeleting != null)) {
+                    this.InformeCitaMedicoRowDeleting(this, new InformeCitaMedicoRowChangeEvent(((InformeCitaMedicoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveInformeCitaMedicoRow(InformeCitaMedicoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                PortalWebDataSet ds = new PortalWebDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "InformeCitaMedicoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -992,7 +1744,12 @@ namespace Clinica_ASP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Cedula {
                 get {
-                    return ((int)(this[this.tableHistoriaPaciente.CedulaColumn]));
+                    try {
+                        return ((int)(this[this.tableHistoriaPaciente.CedulaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cedula\' de la tabla \'HistoriaPaciente\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableHistoriaPaciente.CedulaColumn] = value;
@@ -1036,7 +1793,12 @@ namespace Clinica_ASP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Descripcion {
                 get {
-                    return ((string)(this[this.tableHistoriaPaciente.DescripcionColumn]));
+                    try {
+                        return ((string)(this[this.tableHistoriaPaciente.DescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'HistoriaPaciente\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableHistoriaPaciente.DescripcionColumn] = value;
@@ -1053,63 +1815,54 @@ namespace Clinica_ASP {
                     this[this.tableHistoriaPaciente.RecetaMedicaColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCedulaNull() {
+                return this.IsNull(this.tableHistoriaPaciente.CedulaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCedulaNull() {
+                this[this.tableHistoriaPaciente.CedulaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionNull() {
+                return this.IsNull(this.tableHistoriaPaciente.DescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionNull() {
+                this[this.tableHistoriaPaciente.DescripcionColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class InformeCitasRow : global::System.Data.DataRow {
+        public partial class InformeCitaRow : global::System.Data.DataRow {
             
-            private InformeCitasDataTable tableInformeCitas;
+            private InformeCitaDataTable tableInformeCita;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal InformeCitasRow(global::System.Data.DataRowBuilder rb) : 
+            internal InformeCitaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableInformeCitas = ((InformeCitasDataTable)(this.Table));
+                this.tableInformeCita = ((InformeCitaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Cedula {
                 get {
-                    return ((int)(this[this.tableInformeCitas.CedulaColumn]));
+                    return ((int)(this[this.tableInformeCita.CedulaColumn]));
                 }
                 set {
-                    this[this.tableInformeCitas.CedulaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NombreUsuario {
-                get {
-                    return ((string)(this[this.tableInformeCitas.NombreUsuarioColumn]));
-                }
-                set {
-                    this[this.tableInformeCitas.NombreUsuarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ApellidoUsuario {
-                get {
-                    return ((string)(this[this.tableInformeCitas.ApellidoUsuarioColumn]));
-                }
-                set {
-                    this[this.tableInformeCitas.ApellidoUsuarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NombreTipoUsuario {
-                get {
-                    return ((string)(this[this.tableInformeCitas.NombreTipoUsuarioColumn]));
-                }
-                set {
-                    this[this.tableInformeCitas.NombreTipoUsuarioColumn] = value;
+                    this[this.tableInformeCita.CedulaColumn] = value;
                 }
             }
             
@@ -1117,10 +1870,10 @@ namespace Clinica_ASP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int IdCita {
                 get {
-                    return ((int)(this[this.tableInformeCitas.IdCitaColumn]));
+                    return ((int)(this[this.tableInformeCita.IdCitaColumn]));
                 }
                 set {
-                    this[this.tableInformeCitas.IdCitaColumn] = value;
+                    this[this.tableInformeCita.IdCitaColumn] = value;
                 }
             }
             
@@ -1128,10 +1881,205 @@ namespace Clinica_ASP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime FechaCita {
                 get {
-                    return ((global::System.DateTime)(this[this.tableInformeCitas.FechaCitaColumn]));
+                    return ((global::System.DateTime)(this[this.tableInformeCita.FechaCitaColumn]));
                 }
                 set {
-                    this[this.tableInformeCitas.FechaCitaColumn] = value;
+                    this[this.tableInformeCita.FechaCitaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HoraCita {
+                get {
+                    return ((string)(this[this.tableInformeCita.HoraCitaColumn]));
+                }
+                set {
+                    this[this.tableInformeCita.HoraCitaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Descripcion {
+                get {
+                    return ((string)(this[this.tableInformeCita.DescripcionColumn]));
+                }
+                set {
+                    this[this.tableInformeCita.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string RecetaMedica {
+                get {
+                    return ((string)(this[this.tableInformeCita.RecetaMedicaColumn]));
+                }
+                set {
+                    this[this.tableInformeCita.RecetaMedicaColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class InformeCitaPacienteRow : global::System.Data.DataRow {
+            
+            private InformeCitaPacienteDataTable tableInformeCitaPaciente;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal InformeCitaPacienteRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableInformeCitaPaciente = ((InformeCitaPacienteDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Cedula {
+                get {
+                    return ((int)(this[this.tableInformeCitaPaciente.CedulaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaPaciente.CedulaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreUsuario {
+                get {
+                    return ((string)(this[this.tableInformeCitaPaciente.NombreUsuarioColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaPaciente.NombreUsuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ApellidoUsuario {
+                get {
+                    return ((string)(this[this.tableInformeCitaPaciente.ApellidoUsuarioColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaPaciente.ApellidoUsuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdCita {
+                get {
+                    return ((int)(this[this.tableInformeCitaPaciente.IdCitaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaPaciente.IdCitaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FechaCita {
+                get {
+                    return ((global::System.DateTime)(this[this.tableInformeCitaPaciente.FechaCitaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaPaciente.FechaCitaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreTipoUsuario {
+                get {
+                    return ((string)(this[this.tableInformeCitaPaciente.NombreTipoUsuarioColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaPaciente.NombreTipoUsuarioColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class InformeCitaMedicoRow : global::System.Data.DataRow {
+            
+            private InformeCitaMedicoDataTable tableInformeCitaMedico;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal InformeCitaMedicoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableInformeCitaMedico = ((InformeCitaMedicoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdCita {
+                get {
+                    return ((int)(this[this.tableInformeCitaMedico.IdCitaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaMedico.IdCitaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FechaCita {
+                get {
+                    return ((global::System.DateTime)(this[this.tableInformeCitaMedico.FechaCitaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaMedico.FechaCitaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdFormulaMedica {
+                get {
+                    return ((int)(this[this.tableInformeCitaMedico.IdFormulaMedicaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaMedico.IdFormulaMedicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string RecetaMedica {
+                get {
+                    return ((string)(this[this.tableInformeCitaMedico.RecetaMedicaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaMedico.RecetaMedicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Descripcion {
+                get {
+                    return ((string)(this[this.tableInformeCitaMedico.DescripcionColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaMedico.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Cedula {
+                get {
+                    return ((int)(this[this.tableInformeCitaMedico.CedulaColumn]));
+                }
+                set {
+                    this[this.tableInformeCitaMedico.CedulaColumn] = value;
                 }
             }
         }
@@ -1174,22 +2122,90 @@ namespace Clinica_ASP {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class InformeCitasRowChangeEvent : global::System.EventArgs {
+        public class InformeCitaRowChangeEvent : global::System.EventArgs {
             
-            private InformeCitasRow eventRow;
+            private InformeCitaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformeCitasRowChangeEvent(InformeCitasRow row, global::System.Data.DataRowAction action) {
+            public InformeCitaRowChangeEvent(InformeCitaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformeCitasRow Row {
+            public InformeCitaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class InformeCitaPacienteRowChangeEvent : global::System.EventArgs {
+            
+            private InformeCitaPacienteRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaPacienteRowChangeEvent(InformeCitaPacienteRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaPacienteRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class InformeCitaMedicoRowChangeEvent : global::System.EventArgs {
+            
+            private InformeCitaMedicoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaMedicoRowChangeEvent(InformeCitaMedicoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public InformeCitaMedicoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1403,7 +2419,7 @@ namespace Clinica_ASP.PortalWebDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class InformeCitasTableAdapter : global::System.ComponentModel.Component {
+    public partial class InformeCitaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1417,7 +2433,7 @@ namespace Clinica_ASP.PortalWebDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public InformeCitasTableAdapter() {
+        public InformeCitaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1514,13 +2530,13 @@ namespace Clinica_ASP.PortalWebDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "InformeCitas";
+            tableMapping.DataSetTable = "InformeCita";
             tableMapping.ColumnMappings.Add("Cedula", "Cedula");
-            tableMapping.ColumnMappings.Add("NombreUsuario", "NombreUsuario");
-            tableMapping.ColumnMappings.Add("ApellidoUsuario", "ApellidoUsuario");
-            tableMapping.ColumnMappings.Add("NombreTipoUsuario", "NombreTipoUsuario");
             tableMapping.ColumnMappings.Add("IdCita", "IdCita");
             tableMapping.ColumnMappings.Add("FechaCita", "FechaCita");
+            tableMapping.ColumnMappings.Add("HoraCita", "HoraCita");
+            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
+            tableMapping.ColumnMappings.Add("RecetaMedica", "RecetaMedica");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1537,30 +2553,23 @@ namespace Clinica_ASP.PortalWebDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.InformeCitas";
+            this._commandCollection[0].CommandText = "dbo.InformeCita";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoUsuario", global::System.Data.SqlDbType.VarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PortalWebDataSet.InformeCitasDataTable dataTable, global::System.Nullable<int> cedula, string TipoUsuario) {
+        public virtual int Fill(PortalWebDataSet.InformeCitaDataTable dataTable, global::System.Nullable<int> cedula) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((cedula.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cedula.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((TipoUsuario == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(TipoUsuario));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1573,7 +2582,7 @@ namespace Clinica_ASP.PortalWebDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PortalWebDataSet.InformeCitasDataTable GetData(global::System.Nullable<int> cedula, string TipoUsuario) {
+        public virtual PortalWebDataSet.InformeCitaDataTable GetData1(global::System.Nullable<int> cedula) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((cedula.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cedula.Value));
@@ -1581,13 +2590,379 @@ namespace Clinica_ASP.PortalWebDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((TipoUsuario == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            PortalWebDataSet.InformeCitaDataTable dataTable = new PortalWebDataSet.InformeCitaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class InformeCitaPacienteTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public InformeCitaPacienteTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "InformeCitaPaciente";
+            tableMapping.ColumnMappings.Add("Cedula", "Cedula");
+            tableMapping.ColumnMappings.Add("NombreUsuario", "NombreUsuario");
+            tableMapping.ColumnMappings.Add("ApellidoUsuario", "ApellidoUsuario");
+            tableMapping.ColumnMappings.Add("IdCita", "IdCita");
+            tableMapping.ColumnMappings.Add("FechaCita", "FechaCita");
+            tableMapping.ColumnMappings.Add("NombreTipoUsuario", "NombreTipoUsuario");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PortalWebConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.InformeCitaPaciente";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(PortalWebDataSet.InformeCitaPacienteDataTable dataTable, global::System.Nullable<int> cedula) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((cedula.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cedula.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(TipoUsuario));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            PortalWebDataSet.InformeCitasDataTable dataTable = new PortalWebDataSet.InformeCitasDataTable();
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PortalWebDataSet.InformeCitaPacienteDataTable GetData3(global::System.Nullable<int> cedula) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((cedula.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cedula.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            PortalWebDataSet.InformeCitaPacienteDataTable dataTable = new PortalWebDataSet.InformeCitaPacienteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class InformeCitaMedicoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public InformeCitaMedicoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "InformeCitaMedico";
+            tableMapping.ColumnMappings.Add("IdCita", "IdCita");
+            tableMapping.ColumnMappings.Add("FechaCita", "FechaCita");
+            tableMapping.ColumnMappings.Add("IdFormulaMedica", "IdFormulaMedica");
+            tableMapping.ColumnMappings.Add("RecetaMedica", "RecetaMedica");
+            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
+            tableMapping.ColumnMappings.Add("Cedula", "Cedula");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PortalWebConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.InformeCitaMedico";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(PortalWebDataSet.InformeCitaMedicoDataTable dataTable, global::System.Nullable<int> cedula) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((cedula.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cedula.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PortalWebDataSet.InformeCitaMedicoDataTable GetData2(global::System.Nullable<int> cedula) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((cedula.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cedula.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            PortalWebDataSet.InformeCitaMedicoDataTable dataTable = new PortalWebDataSet.InformeCitaMedicoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

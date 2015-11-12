@@ -33,7 +33,7 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                                 <li id="ReportFormulaM" runat="server"><a href="InformeFormulaMedicaCita.aspx">Formula Medica</a></li>
-                                <li id="ReportCitasP" runat="server"><a href="InformeCitasPacienteMedico.aspx">Informe Citas Medicas</a></li>
+                                <li id="ReportCitasP" runat="server"><a href="InformeCitasPaciente.aspx">Informe Citas Medicas</a></li>
                                 <li id="ReportHistoriaC" runat="server"><a href="ReporteHistoriaClinica.aspx">Historia Clinica</a></li>
                         </ul>
                     </li>   

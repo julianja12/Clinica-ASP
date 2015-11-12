@@ -26,10 +26,12 @@
             <asp:BoundField DataField="Nombre" HeaderText="Nombre Paciente" />
             <asp:BoundField DataField="Apellido" HeaderText="Apellido Paciente" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
         </Columns>
     </asp:GridView>
     <br />
          <h4>Formula Medica al Usuario</h4>
+    <p>&nbsp;</p>
 
     <asp:Label ID="Label3" runat="server" Text="IdCita Usuario:"></asp:Label>
     <asp:TextBox ID="txtIdCita" runat="server"></asp:TextBox>

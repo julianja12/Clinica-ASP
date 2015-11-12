@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 11/05/2015 16:33:06
--- Generated from EDMX file: C:\Users\JulianJa\Documents\Semillero de Pronfudizacion\Clinica-ASP\Clinica-ASP\Clinica-ASP\ClinicaBD.edmx
+-- Date Created: 11/11/2015 18:07:50
+-- Generated from EDMX file: C:\Users\JulianJa\Documents\SemilleroClinicaAsp\Clinica-ASP\Clinica-ASP\ClinicaBD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -25,6 +25,9 @@ IF OBJECT_ID(N'[dbo].[FK__FormulaMe__IdCit__0EA330E9]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK__TipoUsuar__Cedul__0519C6AF]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TipoUsuario] DROP CONSTRAINT [FK__TipoUsuar__Cedul__0519C6AF];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FormulaMedica_Usuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FormulaMedica] DROP CONSTRAINT [FK_FormulaMedica_Usuario];
 GO
 
 -- --------------------------------------------------
@@ -62,7 +65,8 @@ GO
 CREATE TABLE [dbo].[FormulaMedica] (
     [IdCita] int  NOT NULL,
     [IdFormulaMedica] int IDENTITY(1,1) NOT NULL,
-    [RecetaMedica] varchar(150)  NOT NULL
+    [RecetaMedica] varchar(150)  NOT NULL,
+    [Cedula] int  NOT NULL
 );
 GO
 
@@ -144,6 +148,20 @@ ADD CONSTRAINT [FK__FormulaMe__IdCit__0EA330E9]
 CREATE INDEX [IX_FK__FormulaMe__IdCit__0EA330E9]
 ON [dbo].[FormulaMedica]
     ([IdCita]);
+GO
+
+-- Creating foreign key on [Cedula] in table 'FormulaMedica'
+ALTER TABLE [dbo].[FormulaMedica]
+ADD CONSTRAINT [FK_FormulaMedica_Usuario]
+    FOREIGN KEY ([Cedula])
+    REFERENCES [dbo].[Usuario]
+        ([Cedula])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_FormulaMedica_Usuario'
+CREATE INDEX [IX_FK_FormulaMedica_Usuario]
+ON [dbo].[FormulaMedica]
+    ([Cedula]);
 GO
 
 -- Creating foreign key on [Cedula] in table 'TipoUsuario'
