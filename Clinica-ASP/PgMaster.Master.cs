@@ -45,7 +45,7 @@ namespace Clinica_ASP
                     MenuCitas.Visible = true;
                     ReportCitasP.Visible = false;
                     ReportHistoriaC.Visible = true;
-                    ReportFormulaM.Visible = true;
+                    ReportFormulaM.Visible = false;
                     ReportCitasM.Visible = false;
                 }
             }

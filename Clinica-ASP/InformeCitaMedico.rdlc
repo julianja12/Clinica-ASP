@@ -73,7 +73,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
         <Top>1.23625in</Top>
-        <Left>4.2675in</Left>
+        <Left>3.05917in</Left>
         <Height>0.86458in</Height>
         <Width>1.83333in</Width>
         <Style>
@@ -502,8 +502,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.37167in</Top>
-        <Left>1.2675in</Left>
+        <Top>3.23625in</Top>
+        <Left>0.3925in</Left>
         <Height>0.5in</Height>
         <Width>6in</Width>
         <ZIndex>1</ZIndex>
@@ -760,7 +760,7 @@
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
         <Top>4.22583in</Top>
-        <Left>2.55917in</Left>
+        <Left>1.3925in</Left>
         <Height>1.97917in</Height>
         <Width>3.83333in</Width>
         <ZIndex>2</ZIndex>
@@ -782,7 +782,7 @@
       </BackgroundImage>
     </Style>
   </Body>
-  <Width>8.20833in</Width>
+  <Width>6.83333in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

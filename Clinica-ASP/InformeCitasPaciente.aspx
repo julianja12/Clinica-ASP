@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PgMaster.Master" AutoEventWireup="true" CodeBehind="InformeCitasPaciente.aspx.cs" Inherits="Clinica_ASP.InformeCitasPaciente" %>
+﻿<%@ Page Title="" EnableEventValidation="false" Language="C#"  MasterPageFile="~/PgMaster.Master" AutoEventWireup="true" CodeBehind="InformeCitasPaciente.aspx.cs" Inherits="Clinica_ASP.InformeCitasPaciente" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -19,8 +19,8 @@
     <br />
 <br />
 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
-    Font-Size="8pt" Height="530px" InteractiveDeviceInfos="(Colección)" 
-    WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="748px">
+    Font-Size="8pt" Height="602px" InteractiveDeviceInfos="(Colección)" 
+    WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="670px">
     <LocalReport ReportPath="InformeCitaPaciente.rdlc">
         <DataSources>
             <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
