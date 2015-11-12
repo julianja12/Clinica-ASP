@@ -76,6 +76,15 @@ namespace Clinica_ASP {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ReportCitasP;
         
         /// <summary>
+        /// Control ReportCitasM.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ReportCitasM;
+        
+        /// <summary>
         /// Control ReportHistoriaC.
         /// </summary>
         /// <remarks>

@@ -32,12 +32,13 @@
                             Información <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                                <li id="ReportFormulaM" runat="server"><a href="InformeFormulaMedicaCita.aspx">Formula Medica</a></li>
-                                <li id="ReportCitasP" runat="server"><a href="InformeCitasPaciente.aspx">Informe Citas Medicas</a></li>
+                                <li id="ReportFormulaM" runat="server"><a href="InformeFormulaMedicaCita.aspx">Consulta Formula Medica</a></li>
+                                <li id="ReportCitasP" runat="server"><a href="InformeCitasPaciente.aspx">Citas Medicas</a></li>
+                                <li id="ReportCitasM" runat="server"><a href="InformeCitaMedico.aspx">Informe Citas Medicas</a></li>
                                 <li id="ReportHistoriaC" runat="server"><a href="ReporteHistoriaClinica.aspx">Historia Clinica</a></li>
                         </ul>
                     </li>   
-                    <li id="AdminFormula" runat="server"><a href="AdministracionFormulaMedica.aspx">Historia Clinica</a></li>
+                    <li id="AdminFormula" runat="server"><a href="AdministracionFormulaMedica.aspx">Asignar Formula Medica</a></li>
                     <li><a href="Contactenos.aspx">Contáctenos</a></li>
                     <li id="RegistroL" runat="server"><a href="Registro.aspx">Registrarse</a></li>
                 </ul>

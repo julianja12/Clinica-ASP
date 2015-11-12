@@ -26,6 +26,7 @@ namespace Clinica_ASP
                     ReportCitasP.Visible = true;
                     ReportHistoriaC.Visible = false;
                     ReportFormulaM.Visible = false;
+                    ReportCitasM.Visible = false;
                 }
                 else if (Session["tipoUsuario"].ToString()=="2") //Medico
                 {
@@ -35,6 +36,7 @@ namespace Clinica_ASP
                     ReportCitasP.Visible = false;
                     ReportHistoriaC.Visible = true;
                     ReportFormulaM.Visible = true;
+                    ReportCitasM.Visible = true;
                 }
                 else //Paciente o usuario sin rol
                 {
@@ -44,6 +46,7 @@ namespace Clinica_ASP
                     ReportCitasP.Visible = false;
                     ReportHistoriaC.Visible = true;
                     ReportFormulaM.Visible = true;
+                    ReportCitasM.Visible = false;
                 }
             }
             else // Sin iniciar sesion
@@ -70,6 +73,7 @@ namespace Clinica_ASP
             AdminFormula.Visible = false;
             MenuCitas.Visible = false;
             ReportesL.Visible = false;
+            ReportCitasM.Visible = false;
             Session.Clear();
             Response.Redirect("PaginadeInicio.aspx");
         }
